@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GE Vernova – 2024 Spring Outage Season (5 Power Stations) | Ahmed Mubarak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .proj-hero { padding-top: var(--nav-h); min-height: 340px; display:flex; align-items:center; position:relative; overflow:hidden; }
+    .proj-hero-bg { position:absolute; inset:0; z-index:0; }
+    .pc-bg2 { background: linear-gradient(135deg, #0b0d12 0%, #161a23 100%); }
+    .proj-hero-orb { position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(196,157,72,0.12),transparent 70%); top:-200px; right:-100px; pointer-events:none; }
+    .proj-hero-content { position:relative; z-index:1; padding: 60px 0; }
+    .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--gold); font-size:.85rem; font-weight:500; margin-bottom:32px; transition:gap .15s; }
+    .back-link:hover { gap:12px; }
+    .proj-cat-badge { display:inline-block; background:var(--gold-dim); border:1px solid var(--bord-g); color:var(--gold); font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; padding:5px 14px; border-radius:4px; margin-bottom:18px; }
+    .proj-title { font-size:clamp(2rem,4vw,3.2rem); font-weight:700; margin-bottom:16px; max-width:800px; line-height:1.15; }
+    .proj-meta { display:flex; gap:24px; flex-wrap:wrap; }
+    .proj-meta span { font-size:.82rem; color:var(--text-3); display:flex; align-items:center; gap:5px; }
+    .proj-body { max-width:860px; margin:0 auto; padding:64px 32px; }
+    .proj-section { margin-bottom:48px; }
+    .proj-section h2 { font-family:'Outfit',sans-serif; font-size:.8rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+    .proj-section h2::before { content:''; flex:1; max-width:32px; height:1px; background:var(--gold); }
+    .proj-section p { font-size:1rem; color:var(--text-2); line-height:1.85; }
+    .proj-section ul { display:flex; flex-direction:column; gap:10px; }
+    .proj-section ul li { font-size:.95rem; color:var(--text-2); line-height:1.78; padding-left:20px; position:relative; }
+    .proj-section ul li::before { content:'▸'; position:absolute; left:0; color:var(--gold); font-size:.7rem; top:5px; }
+    .proj-section ul li strong { color:var(--text); font-weight:500; }
+    .impact-box { background:var(--bg-card); border:1px solid var(--bord-g); border-radius:12px; padding:28px 32px; }
+    .impact-box p { font-size:.95rem; color:var(--text-2); line-height:1.85; }
+    .proj-tags { display:flex; flex-wrap:wrap; gap:8px; padding-top:32px; border-top:1px solid var(--border); margin-top:48px; }
+    .proj-tags span { background:rgba(196,157,72,.07); border:1px solid rgba(196,157,72,.2); color:var(--text-2); font-size:.78rem; padding:5px 14px; border-radius:4px; }
+    .proj-nav { display:flex; justify-content:space-between; align-items:center; padding:32px 0; border-top:1px solid var(--border); margin-top:16px; }
+    .icon-hero { font-size:6rem; color:var(--gold); opacity:.2; position:absolute; right:10%; top:50%; transform:translateY(-50%); pointer-events:none; }
+    @media(max-width:700px) { .proj-body{padding:40px 18px} .proj-nav{flex-direction:column;gap:16px} }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="resume.pdf" class="btn btn-nav" target="_blank" rel="noopener"><i class="ph ph-file-text"></i> Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#experience" class="mobile-link">Experience</a>
+    <a href="index.html#projects" class="mobile-link">Projects</a>
+    <a href="index.html#skills" class="mobile-link">Skills</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+</nav>
+
+<div class="proj-hero pc-bg2">
+  <div class="proj-hero-bg pc-bg2"></div>
+  <div class="proj-hero-orb"></div>
+  <i class="ph ph-lightning-bold icon-hero"></i>
+  <div class="container proj-hero-content">
+    <a href="index.html#projects" class="back-link"><i class="ph ph-arrow-left"></i> Back to All Projects</a>
+    <div class="proj-cat-badge">Power Generation</div>
+    <h1 class="proj-title">GE Vernova – 2024 Spring Outage Season (5 Power Stations)</h1>
+    <div class="proj-meta">
+      <span><i class="ph ph-buildings"></i> GE Vernova (General Electric)</span>
+      <span><i class="ph ph-calendar"></i> Jan – Sept 2024</span>
+    </div>
+  </div>
+</div>
+
+<div class="proj-body">
+
+  <div class="proj-section">
+    <h2>Overview</h2>
+    <p>Deployed as a Field Engineer during Ontario's 2024 Spring Outage Season, supporting the repair, upgrade, and maintenance of gas turbines, steam turbines, and generator systems across five power stations. Operating in high-pressure, ~90% travel environments, I served as an active member of the execution team alongside senior GE engineers, TFAs, millwright crews, and generator specialists.</p>
+  </div>
+
+  <div class="proj-section">
+    <h2>What Was Built</h2>
+    <ul>
+      <li>Led crews during <strong>turbine disassembly</strong> — provided technical procedures and direction to millwright and mechanical crews</li>
+<li>Supervised clearance measurements during <strong>turbine reassembly</strong> to ensure compliance with OEM tolerance specifications</li>
+<li>Collaborated with TFAs, generator specialists on diagnostic testing, generator rewinds, and heavy lifting operations</li>
+<li>Supported Controls TFAs with <strong>HMI upgrades using GE Cimplicity</strong> — including testing of thermocouples, control valves, and alarm systems</li>
+<li>Prepared field measurements, machining drawings, and inspection reports verifying OEM standards across five sites</li>
+<li>Actively participated in internal and external planning meetings — helped build outage project plans, coordinated manpower, and ensured tools and parts were delivered on time</li>
+<li>Maintained rigorous <strong>safety leadership</strong> — enforced LOTO procedures, confined space entry protocols, PPE compliance, and daily safety briefings</li>
+<li>Contributed to multi-million-dollar project scheduling and vendor coordination to keep outages on track</li>
+
+    </ul>
+  </div>
+
+  <div class="proj-section">
+    <h2>Results &amp; Impact</h2>
+    <div class="impact-box">
+      <p>Contributed to the successful and on-schedule completion of multi-million-dollar outage projects across five Ontario power stations. System upgrades including HMI and DCS improvements enhanced monitoring, reliability, and safety across all facilities. Gained hands-on experience in one of Canada's most demanding field engineering environments.</p>
+    </div>
+  </div>
+
+  <div class="proj-tags">
+    <span>GE Cimplicity HMI</span><span>DCS Systems</span><span>Gas Turbines</span><span>Steam Turbines</span><span>Generators</span><span>LOTO / Safety</span><span>OEM Compliance</span><span>Field Engineering</span><span>Outage Planning</span><span>Commissioning</span>
+  </div>
+
+  <div class="proj-nav">
+    <a href="index.html#projects" class="btn btn-ghost"><i class="ph ph-arrow-left"></i> All Projects</a>
+    <a href="index.html#contact" class="btn btn-primary">Get In Touch <i class="ph ph-arrow-right"></i></a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="f-logo">AM<span class="dot">.</span></span><p>I&amp;C Automation &amp; Control Systems Engineer · EIT<br />Currently at AECOM.</p></div>
+      <nav class="footer-nav"><a href="index.html#about">About</a><a href="index.html#experience">Experience</a><a href="index.html#projects">Projects</a><a href="index.html#contact">Contact</a></nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:ahmed.mubarak.eng@gmail.com" aria-label="Email"><i class="ph ph-envelope"></i></a>
+        <a href="resume.pdf" aria-label="Resume" target="_blank"><i class="ph ph-file-text"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; <span id="year"></span> Ahmed Mubarak.</span><span>Engineered with intention.</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

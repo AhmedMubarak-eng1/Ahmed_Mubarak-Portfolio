@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delta (Marriott) Ottawa Hotel – Dual Air Compressor BAS | Ahmed Mubarak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .proj-hero { padding-top: var(--nav-h); min-height: 340px; display:flex; align-items:center; position:relative; overflow:hidden; }
+    .proj-hero-bg { position:absolute; inset:0; z-index:0; }
+    .pc-bg1 { background: linear-gradient(135deg, #0b0d12 0%, #161a23 100%); }
+    .proj-hero-orb { position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(196,157,72,0.12),transparent 70%); top:-200px; right:-100px; pointer-events:none; }
+    .proj-hero-content { position:relative; z-index:1; padding: 60px 0; }
+    .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--gold); font-size:.85rem; font-weight:500; margin-bottom:32px; transition:gap .15s; }
+    .back-link:hover { gap:12px; }
+    .proj-cat-badge { display:inline-block; background:var(--gold-dim); border:1px solid var(--bord-g); color:var(--gold); font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; padding:5px 14px; border-radius:4px; margin-bottom:18px; }
+    .proj-title { font-size:clamp(2rem,4vw,3.2rem); font-weight:700; margin-bottom:16px; max-width:800px; line-height:1.15; }
+    .proj-meta { display:flex; gap:24px; flex-wrap:wrap; }
+    .proj-meta span { font-size:.82rem; color:var(--text-3); display:flex; align-items:center; gap:5px; }
+    .proj-body { max-width:860px; margin:0 auto; padding:64px 32px; }
+    .proj-section { margin-bottom:48px; }
+    .proj-section h2 { font-family:'Outfit',sans-serif; font-size:.8rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+    .proj-section h2::before { content:''; flex:1; max-width:32px; height:1px; background:var(--gold); }
+    .proj-section p { font-size:1rem; color:var(--text-2); line-height:1.85; }
+    .proj-section ul { display:flex; flex-direction:column; gap:10px; }
+    .proj-section ul li { font-size:.95rem; color:var(--text-2); line-height:1.78; padding-left:20px; position:relative; }
+    .proj-section ul li::before { content:'▸'; position:absolute; left:0; color:var(--gold); font-size:.7rem; top:5px; }
+    .proj-section ul li strong { color:var(--text); font-weight:500; }
+    .impact-box { background:var(--bg-card); border:1px solid var(--bord-g); border-radius:12px; padding:28px 32px; }
+    .impact-box p { font-size:.95rem; color:var(--text-2); line-height:1.85; }
+    .proj-tags { display:flex; flex-wrap:wrap; gap:8px; padding-top:32px; border-top:1px solid var(--border); margin-top:48px; }
+    .proj-tags span { background:rgba(196,157,72,.07); border:1px solid rgba(196,157,72,.2); color:var(--text-2); font-size:.78rem; padding:5px 14px; border-radius:4px; }
+    .proj-nav { display:flex; justify-content:space-between; align-items:center; padding:32px 0; border-top:1px solid var(--border); margin-top:16px; }
+    .icon-hero { font-size:6rem; color:var(--gold); opacity:.2; position:absolute; right:10%; top:50%; transform:translateY(-50%); pointer-events:none; }
+    @media(max-width:700px) { .proj-body{padding:40px 18px} .proj-nav{flex-direction:column;gap:16px} }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="resume.pdf" class="btn btn-nav" target="_blank" rel="noopener"><i class="ph ph-file-text"></i> Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#experience" class="mobile-link">Experience</a>
+    <a href="index.html#projects" class="mobile-link">Projects</a>
+    <a href="index.html#skills" class="mobile-link">Skills</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+</nav>
+
+<div class="proj-hero pc-bg1">
+  <div class="proj-hero-bg pc-bg1"></div>
+  <div class="proj-hero-orb"></div>
+  <i class="ph ph-buildings-bold icon-hero"></i>
+  <div class="container proj-hero-content">
+    <a href="index.html#projects" class="back-link"><i class="ph ph-arrow-left"></i> Back to All Projects</a>
+    <div class="proj-cat-badge">Building Automation · Capstone</div>
+    <h1 class="proj-title">Delta (Marriott) Ottawa Hotel – Dual Air Compressor BAS</h1>
+    <div class="proj-meta">
+      <span><i class="ph ph-buildings"></i> Midwest Services Canada</span>
+      <span><i class="ph ph-calendar"></i> Jan – March 2025</span>
+    </div>
+  </div>
+</div>
+
+<div class="proj-body">
+
+  <div class="proj-section">
+    <h2>Overview</h2>
+    <p>Led the end-to-end design and implementation of a dual air compressor building automation system for the Delta Ottawa Hotel (Marriott brand). Responsible for the full project lifecycle — from requirements definition and supplier coordination through to on-site commissioning, operator training, and ESA/ESAFE certification. This was a capstone-level project delivered while working part-time at Midwest Services Canada.</p>
+  </div>
+
+  <div class="proj-section">
+    <h2>What Was Built</h2>
+    <ul>
+      <li>Designed full system architecture, electrical schematics, power distribution, control circuits, and protection schemes in <strong>AutoCAD Electrical</strong></li>
+<li>Programmed a <strong>Siemens LOGO! PLC</strong> for automatic and manual operation modes, load balancing between two compressors, runtime tracking, and preventive maintenance scheduling</li>
+<li>Integrated advanced alarm handling — leak detection alerts, low pressure warnings, and abnormal operation flags sent directly to engineering staff</li>
+<li>Automated <strong>daily engineer reports</strong> providing real-time visibility of system health, runtime hours, and upcoming maintenance milestones</li>
+<li>Designed and built a <strong>CSA-compliant custom control panel</strong> including power distribution, protection devices, and all I/O wiring</li>
+<li>Managed supplier coordination and procurement of all panel components and instrumentation</li>
+<li>Commissioned the system on-site at the Delta Ottawa Hotel and trained hotel engineering staff on operation and maintenance procedures</li>
+<li>Achieved <strong>ESA/ESAFE certification</strong> — fully compliant with Ontario electrical safety standards</li>
+
+    </ul>
+  </div>
+
+  <div class="proj-section">
+    <h2>Results &amp; Impact</h2>
+    <div class="impact-box">
+      <p>Delivered a fully certified, standards-compliant solution that significantly reduced unplanned downtime, extended compressor service cycles, and gave hotel engineering staff complete real-time visibility over system health — preventing costly reactive maintenance. The client received a complete documentation package including wiring drawings, logic descriptions, and maintenance procedures for long-term support.</p>
+    </div>
+  </div>
+
+  <div class="proj-tags">
+    <span>Siemens LOGO! PLC</span><span>AutoCAD Electrical</span><span>Panel Design & Build</span><span>CSA Compliance</span><span>ESA/ESAFE Certified</span><span>Commissioning</span><span>Operator Training</span><span>Building Automation</span><span>Alarm Handling</span><span>Preventive Maintenance</span>
+  </div>
+
+  <div class="proj-nav">
+    <a href="index.html#projects" class="btn btn-ghost"><i class="ph ph-arrow-left"></i> All Projects</a>
+    <a href="index.html#contact" class="btn btn-primary">Get In Touch <i class="ph ph-arrow-right"></i></a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="f-logo">AM<span class="dot">.</span></span><p>I&amp;C Automation &amp; Control Systems Engineer · EIT<br />Currently at AECOM.</p></div>
+      <nav class="footer-nav"><a href="index.html#about">About</a><a href="index.html#experience">Experience</a><a href="index.html#projects">Projects</a><a href="index.html#contact">Contact</a></nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:ahmed.mubarak.eng@gmail.com" aria-label="Email"><i class="ph ph-envelope"></i></a>
+        <a href="resume.pdf" aria-label="Resume" target="_blank"><i class="ph ph-file-text"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; <span id="year"></span> Ahmed Mubarak.</span><span>Engineered with intention.</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
