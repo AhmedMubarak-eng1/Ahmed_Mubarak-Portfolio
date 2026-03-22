@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GE Vernova – 2024 Spring Outage Season (5 Power Stations) | Ahmed Mubarak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .proj-hero {
+      padding-top: var(--nav-h); min-height: 380px;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .proj-hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(135deg, #0b0d12 0%, #161a23 100%);
+    }
+    .proj-hero-orb {
+      position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,157,72,0.13), transparent 70%);
+      top: -220px; right: -120px; pointer-events: none;
+    }
+    .proj-hero-orb2 {
+      position: absolute; width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,157,72,0.06), transparent 70%);
+      bottom: -100px; left: 5%; pointer-events: none;
+    }
+    .proj-hero-content { position: relative; z-index: 1; padding: 64px 0; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--gold); font-size: .85rem; font-weight: 500;
+      margin-bottom: 32px; transition: gap .15s;
+    }
+    .back-link:hover { gap: 12px; }
+    .proj-cat-badge {
+      display: inline-block; background: var(--gold-dim);
+      border: 1px solid var(--bord-g); color: var(--gold);
+      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 18px;
+    }
+    .proj-title {
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700;
+      margin-bottom: 16px; max-width: 800px; line-height: 1.15;
+    }
+    .proj-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .proj-meta span {
+      font-size: .82rem; color: var(--text-3);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .icon-hero {
+      font-size: 6rem; color: var(--gold); opacity: .15;
+      position: absolute; right: 10%; top: 50%;
+      transform: translateY(-50%); pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════
+       BODY
+    ══════════════════════════════════════ */
+    .proj-body { max-width: 900px; margin: 0 auto; padding: 72px 32px 80px; }
+
+    .proj-section { margin-bottom: 52px; }
+    .proj-section h2 {
+      font-family: 'Outfit', sans-serif; font-size: .78rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    }
+    .proj-section h2::before { content: ''; flex: 1; max-width: 32px; height: 1px; background: var(--gold); }
+    .proj-section p { font-size: 1rem; color: var(--text-2); line-height: 1.9; }
+    .proj-section p + p { margin-top: 16px; }
+    .proj-section ul { display: flex; flex-direction: column; gap: 12px; }
+    .proj-section ul li {
+      font-size: .95rem; color: var(--text-2);
+      line-height: 1.8; padding-left: 22px; position: relative;
+    }
+    .proj-section ul li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--gold); font-size: .7rem; top: 5px;
+    }
+    .proj-section ul li strong { color: var(--text); font-weight: 500; }
+
+    /* ══════════════════════════════════════
+       BENEFIT CARDS
+    ══════════════════════════════════════ */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-bottom: 56px;
+    }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 22px; text-align: center;
+      transition: border-color .2s, transform .2s;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .stat-card:hover { border-color: var(--bord-g); transform: translateY(-3px); }
+    .stat-card .stat-icon {
+      font-size: 1.6rem; color: var(--gold);
+      background: var(--gold-dim); border: 1px solid var(--bord-g);
+      width: 48px; height: 48px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 4px;
+    }
+    .stat-card .stat-val {
+      font-family: 'Outfit', sans-serif; font-size: .9rem; font-weight: 600;
+      color: var(--text); line-height: 1.3;
+    }
+    .stat-card .stat-lbl {
+      font-size: .78rem; color: var(--text-3);
+      line-height: 1.65; letter-spacing: 0; text-transform: none;
+    }
+
+    /* ══════════════════════════════════════
+       IMPACT BOX
+    ══════════════════════════════════════ */
+    .impact-box {
+      background: var(--bg-card); border: 1px solid var(--bord-g);
+      border-radius: 12px; padding: 28px 32px;
+    }
+    .impact-box p { font-size: .95rem; color: var(--text-2); line-height: 1.9; }
+    .impact-box p + p { margin-top: 14px; }
+
+    /* ══════════════════════════════════════
+       IMAGE SYSTEM — object-fit: contain
+    ══════════════════════════════════════ */
+    .img-full {
+      width: 100%; background: #0d1018;
+      border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; margin-bottom: 10px;
+      cursor: zoom-in; transition: border-color .2s;
+    }
+    .img-full:hover { border-color: var(--bord-g); }
+    .img-full img {
+      width: 100%; display: block;
+      object-fit: contain; background: #0d1018;
+    }
+
+    .img-pair {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; margin-bottom: 10px;
+    }
+    .img-trio {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px; margin-bottom: 10px;
+    }
+    .img-card {
+      background: #0d1018; border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      cursor: zoom-in; transition: border-color .2s;
+    }
+    .img-card:hover { border-color: var(--bord-g); }
+    .img-card img {
+      width: 100%; display: block;
+      object-fit: contain; background: #0d1018;
+    }
+
+    .img-caption {
+      font-size: .74rem; color: var(--text-3);
+      text-align: center; margin-bottom: 52px;
+    }
+    .img-caption span {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 16px;
+      display: inline-block; line-height: 1.6;
+    }
+
+    /* image + text side by side */
+    .img-text-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 28px; align-items: center; margin-bottom: 52px;
+    }
+    .img-text-row.flip { direction: rtl; }
+    .img-text-row.flip > * { direction: ltr; }
+    .img-side {
+      background: #0d1018; border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      cursor: zoom-in; transition: border-color .2s;
+    }
+    .img-side:hover { border-color: var(--bord-g); }
+    .img-side img { width: 100%; display: block; object-fit: contain; background: #0d1018; }
+    .text-side h3 {
+      font-family: 'Outfit', sans-serif; font-size: .78rem; font-weight: 600;
+      letter-spacing: .13em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .text-side h3::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+    .text-side p { font-size: .93rem; color: var(--text-2); line-height: 1.88; }
+    .text-side p + p { margin-top: 12px; }
+
+    /* ══════════════════════════════════════
+       TAGS & NAV
+    ══════════════════════════════════════ */
+    .proj-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      padding-top: 32px; border-top: 1px solid var(--border); margin-top: 48px;
+    }
+    .proj-tags span {
+      background: rgba(196,157,72,.07); border: 1px solid rgba(196,157,72,.2);
+      color: var(--text-2); font-size: .78rem; padding: 5px 14px; border-radius: 4px;
+    }
+    .proj-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 32px 0; border-top: 1px solid var(--border); margin-top: 16px;
+    }
+
+    /* ══════════════════════════════════════
+       LIGHTBOX
+    ══════════════════════════════════════ */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(11,13,18,.97); backdrop-filter: blur(20px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-img {
+      max-width: 90vw; max-height: 86vh; border-radius: 8px;
+      box-shadow: 0 40px 100px rgba(0,0,0,.7); object-fit: contain;
+    }
+    .lightbox-close {
+      position: fixed; top: 20px; right: 24px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      color: var(--text-2); width: 42px; height: 42px; border-radius: 8px;
+      cursor: pointer; font-size: 1.15rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .15s, color .15s;
+    }
+    .lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-caption {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      font-size: .78rem; color: var(--text-3);
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 6px 18px; border-radius: 20px;
+      max-width: 80vw; text-align: center; white-space: normal;
+    }
+    .lightbox-nav {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      background: var(--bg-card); border: 1px solid var(--border);
+      color: var(--text-2); width: 46px; height: 46px; border-radius: 8px;
+      cursor: pointer; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .15s;
+    }
+    .lightbox-nav:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 700px) {
+      .proj-body { padding: 44px 18px 64px; }
+      .proj-nav { flex-direction: column; gap: 16px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .img-pair, .img-trio { grid-template-columns: 1fr; }
+      .img-text-row { grid-template-columns: 1fr; }
+      .img-text-row.flip { direction: ltr; }
+      .lightbox-nav { display: none; }
+    }
+    @media (max-width: 480px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="resume.pdf" class="btn btn-nav" target="_blank" rel="noopener"><i class="ph ph-file-text"></i> Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#experience" class="mobile-link">Experience</a>
+    <a href="index.html#projects" class="mobile-link">Projects</a>
+    <a href="index.html#skills" class="mobile-link">Skills</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <div class="proj-hero-orb"></div>
+  <div class="proj-hero-orb2"></div>
+  <i class="ph ph-lightning-bold icon-hero"></i>
+  <div class="container proj-hero-content">
+    <a href="index.html#projects" class="back-link"><i class="ph ph-arrow-left"></i> Back to All Projects</a>
+    <div class="proj-cat-badge">Power Generation · Field Engineering</div>
+    <h1 class="proj-title">GE Vernova – 2024 Spring Outage Season (5 Power Stations)</h1>
+    <div class="proj-meta">
+      <span><i class="ph ph-buildings"></i> GE Vernova (General Electric)</span>
+      <span><i class="ph ph-calendar"></i> Jan – Sept 2024</span>
+      <span><i class="ph ph-map-pin"></i> Ontario, Canada</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BODY ══ -->
+<div class="proj-body">
+
+  <!-- 1. OVERVIEW -->
+  <div class="proj-section">
+    <h2>Overview</h2>
+    <p>
+      Deployed as a Field Engineer during Ontario's 2024 Spring Outage Season, supporting the
+      repair, upgrade, and maintenance of gas turbines, steam turbines, and generator systems
+      across <em>five power stations</em>. Operating in a high-pressure, ~90% travel environment,
+      I served as an active member of the execution team alongside senior GE engineers, Technical
+      Field Advisors (TFAs), millwright crews, and generator specialists — contributing to
+      multi-million-dollar outage projects from planning through final return-to-service.
+    </p>
+    <p>
+      This co-op placement put me inside some of Canada's most critical power generation infrastructure,
+      working directly on the rotating machinery that keeps Ontario's electrical grid running.
+      Every task demanded precision, strict OEM compliance, and a safety-first mindset in
+      one of the most demanding field environments in the industry.
+    </p>
+  </div>
+
+  <!-- 2. BENEFIT CARDS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-factory"></i></div>
+      <div class="stat-val">5 Power Stations</div>
+      <div class="stat-lbl">Deployed across five Ontario power generation facilities in a single outage season — gas turbine, steam turbine, and generator work at each site</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-shield-check"></i></div>
+      <div class="stat-val">OEM-Compliant Execution</div>
+      <div class="stat-lbl">All turbine reassembly clearances and inspection reports verified against GE OEM tolerance specifications — zero rework on any measured component</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-hard-hat"></i></div>
+      <div class="stat-val">Safety Leadership</div>
+      <div class="stat-lbl">Enforced LOTO, confined space entry, PPE compliance, and daily safety briefings across all five sites — zero lost-time incidents throughout the season</div>
+    </div>
+  </div>
+
+  <!-- 3. IMAGE — Ahmed on turbine casing (scene setter / personal) -->
+  <div class="img-full" data-idx="0">
+    <img src="pic11_ge.jpg"
+         alt="Ahmed Mubarak in GE Vernova field uniform standing on steam turbine casing at power station"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>On-site at one of the five Ontario power stations during the 2024 Spring Outage Season</span>
+  </p>
+
+  <!-- 4. GENERATOR WORK -->
+  <div class="proj-section">
+    <h2>Generator Overhaul &amp; Rewind</h2>
+    <p>
+      A significant portion of the outage work involved large industrial generators —
+      inspecting, testing, and supporting full rewind operations alongside specialist crews.
+      This included assisting with diagnostic testing, stator winding inspection, and the
+      precise re-installation of rewound coils into the generator stator core. The internals
+      of these machines operate under extreme electromagnetic and thermal conditions, and
+      every measurement taken during reassembly directly impacts the reliability of the
+      generator for its next multi-year service cycle.
+    </p>
+  </div>
+
+  <!-- Generator stator interior (pic2) + rewound rotor (pic3) -->
+  <div class="img-pair">
+    <div class="img-card" data-idx="1">
+      <img src="pic2_ge.jpg"
+           alt="Generator stator interior showing freshly rewound stator coils with copper windings viewed from end-on"
+           loading="lazy" />
+    </div>
+    <div class="img-card" data-idx="2">
+      <img src="pic3_ge.jpg"
+           alt="Generator rotor laid out on workshop floor showing copper conductor strips and journal bearings — ready for inspection"
+           loading="lazy" />
+    </div>
+  </div>
+  <p class="img-caption">
+    <span>Generator overhaul — stator interior with rewound coils (left) and rotor assembly staged for inspection (right)</span>
+  </p>
+
+  <!-- Generator internals close-up (pic1) — full width -->
+  <div class="img-full" data-idx="3">
+    <img src="pic1_ge.jpg"
+         alt="Inside view of generator stator bore showing freshly epoxy-coated blue stator windings with rotor shaft visible through the centre"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>Generator stator bore — freshly coated stator windings viewed from the exciter end during reassembly</span>
+  </p>
+
+  <!-- 5. TURBINE DISASSEMBLY & REASSEMBLY -->
+  <div class="proj-section">
+    <h2>Turbine Disassembly &amp; Reassembly</h2>
+    <p>
+      Gas turbine and steam turbine outage work required directing millwright crews through
+      structured disassembly sequences — removing turbine casings, extracting rotors, and
+      staging components for inspection and machining. During reassembly, I supervised all
+      critical clearance measurements to ensure compliance with GE OEM tolerance specifications,
+      documenting every measurement in formal inspection reports submitted to the project record.
+    </p>
+    <p>
+      Handling turbine rotors — components that can weigh several tonnes and spin at thousands
+      of RPM in service — demanded rigorous foreign material exclusion (FME) controls,
+      precision rigging, and close coordination with millwright and crane crews at every step.
+    </p>
+  </div>
+
+  <!-- Turbine disassembly with crew (pic4) — full width -->
+  <div class="img-full" data-idx="4">
+    <img src="pic4_ge.jpg"
+         alt="Gas turbine upper casing being lifted by overhead crane during disassembly — millwright crew in PPE guiding the lift on the turbine deck"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>Gas turbine upper casing lift — millwright crew directing overhead crane during disassembly operations</span>
+  </p>
+
+  <!-- Steam turbine rotor on stands (pic5/6) + blades close-up (pic7/8) -->
+  <div class="img-pair">
+    <div class="img-card" data-idx="5">
+      <img src="pic5_ge.jpg"
+           alt="Steam turbine rotor assembly staged on wooden supports in workshop — multiple blade stages visible along the shaft"
+           loading="lazy" />
+    </div>
+    <div class="img-card" data-idx="6">
+      <img src="pic7_ge.jpg"
+           alt="Steam turbine rotor on yellow cradle stands showing multi-stage blade discs — ready for clearance measurement and inspection"
+           loading="lazy" />
+    </div>
+  </div>
+  <p class="img-caption">
+    <span>Steam turbine rotors staged for inspection — blade stage geometry and journal surfaces checked against OEM tolerances</span>
+  </p>
+
+  <!-- Blade detail pair (pic8) + rotor lift (pic9) -->
+  <div class="img-text-row">
+    <div class="img-side" data-idx="7">
+      <img src="pic8_ge.jpg"
+           alt="Close-up of steam turbine rotor blade stages showing precision machined blade profiles from end-on perspective"
+           loading="lazy" />
+    </div>
+    <div class="text-side">
+      <h3>Precision Clearance Measurements</h3>
+      <p>
+        During reassembly, every blade-to-casing clearance, journal bearing clearance, and
+        seal gap was measured and recorded. These tolerances are defined in microns — even
+        small deviations from OEM specifications can cause vibration, efficiency losses,
+        or catastrophic failure at operating speed.
+      </p>
+      <p>
+        All measurements were documented in formal inspection reports and reviewed against
+        GE technical specifications before any component was signed off for re-installation.
+      </p>
+    </div>
+  </div>
+
+  <!-- 6. HEAVY LIFTING & ROTOR INSTALLATION -->
+  <div class="proj-section">
+    <h2>Heavy Lifting &amp; Rotor Installation</h2>
+    <p>
+      Turbine rotor installation is one of the most technically demanding and safety-critical
+      operations in a power station outage. The rotor must be lifted, transported, and lowered
+      into the turbine casing with millimetre precision — guided by engineers and millwrights
+      working in tight coordination. I supported these lifts directly, verifying rigging
+      configurations, monitoring clearances during lowering, and communicating with the crane
+      operator throughout.
+    </p>
+  </div>
+
+  <!-- Rotor lift operation (pic9) — full width -->
+  <div class="img-full" data-idx="8">
+    <img src="pic9_ge.jpg"
+         alt="Large steam turbine rotor being lifted by overhead crane during installation — engineering crew in PPE observing from below in power station bay"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>Turbine rotor installation lift — engineering and millwright crew coordinating overhead crane operation during rotor lowering</span>
+  </p>
+
+  <!-- 7. TEAM & CULTURE -->
+  <div class="proj-section">
+    <h2>The Team</h2>
+    <p>
+      A power station outage runs 24 hours a day, 7 days a week, against a hard return-to-service
+      deadline. The work is only possible through a large, tightly coordinated team —
+      engineers, TFAs, millwrights, welders, riggers, and safety specialists all working
+      in parallel. This outage season gave me deep experience working within that structure:
+      participating in daily planning meetings, coordinating across trades, and understanding
+      how a multi-million-dollar project gets executed under schedule pressure.
+    </p>
+  </div>
+
+  <!-- Full crew photo (pic10) — full width -->
+  <div class="img-full" data-idx="9">
+    <img src="pic10_ge.jpg"
+         alt="Full outage crew of approximately 25 engineers and millwrights posing together inside the power station turbine hall at end of outage"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>The outage crew — engineers, TFAs, millwrights, and field specialists at the end of a successful outage at one of the five stations</span>
+  </p>
+
+  <!-- 8. HMI & DCS UPGRADES -->
+  <div class="proj-section">
+    <h2>HMI &amp; DCS Upgrades</h2>
+    <p>
+      Alongside the mechanical outage work, I collaborated with GE Controls Technical Field
+      Advisors (TFAs) on <strong>HMI upgrades using GE Cimplicity and Siemens Energy DCS</strong>
+      at multiple power stations. These upgrades involved updating operator display screens,
+      verifying thermocouple and sensor inputs, testing control valve responses, and validating
+      alarm logic — ensuring that when the turbines returned to service, the operators had
+      accurate, reliable real-time visibility of every critical parameter.
+    </p>
+    <p>
+      The control room setup used multi-monitor workstations running GE Vernova's Cimplicity
+      SCADA platform — displaying everything from individual motor lead/lag status and lube oil
+      system schematics to full gas turbine exhaust temperature profiles and live MW output
+      across multiple generation units simultaneously.
+    </p>
+  </div>
+
+  <!-- Multi-monitor control room overview — full width -->
+  <div class="img-full" data-idx="10">
+    <img src="pic_HMI.jpg"
+         alt="Multi-monitor GE Vernova control room workstation showing GE Cimplicity HMI screens — motor status overview, network diagnostics, and auxiliary systems across four monitors"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>Control room workstation — GE Cimplicity SCADA across four monitors showing motor status, auxiliary systems, and network diagnostics during post-upgrade verification</span>
+  </p>
+
+  <!-- Lube oil system schematic (pic_hmi_2) + GT overview (pic_hmi_3) side by side -->
+  <div class="img-pair">
+    <div class="img-card" data-idx="11">
+      <img src="pic_hmi_2.jpg"
+           alt="GE Vernova DCS screen showing steam turbine lube oil and lift oil system schematic — pump status, pressure readings, temperature values, and oil level displayed on Siemens Energy HMI"
+           loading="lazy" />
+    </div>
+    <div class="img-card" data-idx="12">
+      <img src="pic_hmi_3.jpg"
+           alt="GE Cimplicity HMI overview screen showing three gas turbine units GT11, GT12, GT13 — speed, MW output, casing purity, hydrogen pressure, exhaust temperature, and vibration data"
+           loading="lazy" />
+    </div>
+  </div>
+  <p class="img-caption">
+    <span>DCS screens — steam turbine lube oil system schematic with live sensor readings (left) and three-unit gas turbine overview showing GT11, GT12, GT13 operating parameters (right)</span>
+  </p>
+
+  <!-- Full 4-monitor DCS setup — full width -->
+  <div class="img-text-row">
+    <div class="img-side" data-idx="13">
+      <img src="pic_hmi_4.jpg"
+           alt="Four-monitor DCS workstation showing GE Cimplicity screens — alarm log, GT overview units 11-13, gas turbine wheelspace temperatures, and exhaust temperature radial profile"
+           loading="lazy" />
+    </div>
+    <div class="text-side">
+      <h3>What the HMI Upgrades Delivered</h3>
+      <p>
+        The upgraded HMI screens gave plant operators a complete, real-time picture of
+        every turbine and auxiliary system — from individual thermocouple readings at each
+        exhaust port to hydrogen purity inside the generator casing, lube oil pressure across
+        all bearing journals, and MW output with load setpoint control.
+      </p>
+      <p>
+        Alarm systems were validated to ensure all fault conditions — high vibration, abnormal
+        exhaust spreads, lube oil low pressure — were correctly configured and would alert
+        operators before a minor issue escalated into a forced outage.
+      </p>
+    </div>
+  </div>
+
+  <!-- 8. FULL SCOPE OF WORK -->
+  <div class="proj-section">
+    <h2>Full Scope of Work</h2>
+    <ul>
+      <li>Led crews during <strong>turbine disassembly</strong> — provided technical direction to millwright crews following GE OEM procedures across gas and steam turbine units</li>
+      <li>Supervised all <strong>clearance measurements during turbine reassembly</strong> — verified blade, bearing, and seal clearances against OEM tolerance specifications and documented results in inspection reports</li>
+      <li>Supported <strong>generator rewind operations</strong> — assisted specialist crews with stator winding inspection, coil installation, and diagnostic testing</li>
+      <li>Collaborated with Controls TFAs on <strong>HMI upgrades using GE Cimplicity and Siemens Energy DCS</strong> — updated operator screens, verified thermocouple inputs, tested control valve responses, and validated alarm logic across gas turbine and steam turbine units</li>
+      <li>Prepared <strong>field measurement reports and machining drawings</strong> verifying OEM dimensional standards across all five sites</li>
+      <li>Coordinated <strong>heavy lifting operations</strong> — verified rigging configurations and guided rotor and casing lifts with overhead crane crews</li>
+      <li>Participated actively in <strong>internal and external planning meetings</strong> — helped build outage project plans, coordinated manpower, and ensured tools and parts were on-site on time</li>
+      <li>Maintained rigorous <strong>safety leadership</strong> — enforced LOTO procedures, confined space entry protocols, PPE compliance, FME controls, and daily safety briefings at every station</li>
+      <li>Contributed to <strong>multi-million-dollar project scheduling</strong> and vendor coordination to keep outages on-track against hard return-to-service deadlines</li>
+    </ul>
+  </div>
+
+  <!-- 9. RESULTS & IMPACT -->
+  <div class="proj-section">
+    <h2>Results &amp; Impact</h2>
+    <div class="impact-box">
+      <p>
+        Contributed to the successful, on-schedule completion of multi-million-dollar outage
+        projects across five Ontario power stations. All turbine reassembly measurements were
+        accepted against OEM specifications with no rework required — a direct result of careful
+        procedure adherence and documentation. HMI and DCS upgrades enhanced monitoring,
+        reliability, and operator visibility across all facilities returned to service.
+      </p>
+      <p>
+        This placement provided an exceptional depth of hands-on experience in Canada's most
+        demanding field engineering environment — working with complex rotating machinery,
+        large-scale project execution, and safety-critical operations that few engineers
+        encounter this early in their careers.
+      </p>
+    </div>
+  </div>
+
+  <!-- 10. TAGS -->
+  <div class="proj-tags">
+    <span>GE Cimplicity HMI</span>
+    <span>Siemens Energy DCS</span>
+    <span>SCADA Systems</span>
+    <span>Alarm Validation</span>
+    <span>Thermocouple Testing</span>
+    <span>Gas Turbines</span>
+    <span>Steam Turbines</span>
+    <span>Generators</span>
+    <span>Generator Rewind</span>
+    <span>Turbine Rotor Installation</span>
+    <span>OEM Compliance</span>
+    <span>Clearance Measurements</span>
+    <span>LOTO / Safety</span>
+    <span>FME Controls</span>
+    <span>Heavy Lifting & Rigging</span>
+    <span>Outage Planning</span>
+    <span>Field Engineering</span>
+  </div>
+
+  <!-- 11. BOTTOM NAV -->
+  <div class="proj-nav">
+    <a href="index.html#projects" class="btn btn-ghost"><i class="ph ph-arrow-left"></i> All Projects</a>
+    <a href="index.html#contact" class="btn btn-primary">Get In Touch <i class="ph ph-arrow-right"></i></a>
+  </div>
+
+</div><!-- /proj-body -->
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lbClose" aria-label="Close"><i class="ph ph-x"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous"><i class="ph ph-arrow-left"></i></button>
+  <img class="lightbox-img" id="lbImg" src="" alt="" />
+  <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next"><i class="ph ph-arrow-right"></i></button>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="f-logo">AM<span class="dot">.</span></span>
+        <p>I&amp;C Automation &amp; Control Systems Engineer · EIT<br />Currently at AECOM.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:ahmed.mubarak.eng@gmail.com" aria-label="Email"><i class="ph ph-envelope"></i></a>
+        <a href="resume.pdf" aria-label="Resume" target="_blank"><i class="ph ph-file-text"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Ahmed Mubarak.</span>
+      <span>Engineered with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+(function () {
+  const clickables = document.querySelectorAll('[data-idx]');
+  const images = [];
+  clickables.forEach(function (el) {
+    const img = el.querySelector('img');
+    const captionEl = el.closest('.img-full, .img-pair, .img-trio, .img-text-row')
+                       ?.nextElementSibling?.querySelector('span');
+    images.push({
+      src: img ? img.src : '',
+      alt: img ? img.alt : '',
+      caption: captionEl ? captionEl.textContent.trim() : (img ? img.alt : '')
+    });
+  });
+
+  const lb      = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lbImg');
+  const lbCap   = document.getElementById('lbCaption');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev  = document.getElementById('lbPrev');
+  const lbNext  = document.getElementById('lbNext');
+  let current   = 0;
+
+  function openLb(idx) {
+    current = idx;
+    lbImg.src = images[idx].src;
+    lbImg.alt = images[idx].alt;
+    lbCap.textContent = images[idx].caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+  function prev() { openLb((current - 1 + clickables.length) % clickables.length); }
+  function next() { openLb((current + 1) % clickables.length); }
+
+  clickables.forEach(function (el, i) {
+    el.addEventListener('click', function () { openLb(i); });
+  });
+  lbClose.addEventListener('click', closeLb);
+  lbPrev.addEventListener('click', prev);
+  lbNext.addEventListener('click', next);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+</script>
+</body>
+</html>
