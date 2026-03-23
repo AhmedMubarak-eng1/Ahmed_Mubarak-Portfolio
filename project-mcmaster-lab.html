@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>McMaster Automation Learning Factory – Multiple Projects | Ahmed Mubarak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ══ HERO ══ */
+    .proj-hero {
+      padding-top: var(--nav-h); min-height: 380px;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .proj-hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(135deg, #0b0d12 0%, #161a23 100%);
+    }
+    .proj-hero-orb {
+      position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,157,72,0.13), transparent 70%);
+      top: -220px; right: -120px; pointer-events: none;
+    }
+    .proj-hero-orb2 {
+      position: absolute; width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,157,72,0.06), transparent 70%);
+      bottom: -100px; left: 5%; pointer-events: none;
+    }
+    .proj-hero-content { position: relative; z-index: 1; padding: 64px 0; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--gold); font-size: .85rem; font-weight: 500;
+      margin-bottom: 32px; transition: gap .15s;
+    }
+    .back-link:hover { gap: 12px; }
+    .proj-cat-badge {
+      display: inline-block; background: var(--gold-dim);
+      border: 1px solid var(--bord-g); color: var(--gold);
+      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 18px;
+    }
+    .proj-title {
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700;
+      margin-bottom: 16px; max-width: 800px; line-height: 1.15;
+    }
+    .proj-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .proj-meta span {
+      font-size: .82rem; color: var(--text-3);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .icon-hero {
+      font-size: 6rem; color: var(--gold); opacity: .15;
+      position: absolute; right: 10%; top: 50%;
+      transform: translateY(-50%); pointer-events: none;
+    }
+
+    /* ══ BODY ══ */
+    .proj-body { max-width: 900px; margin: 0 auto; padding: 72px 32px 80px; }
+
+    .proj-section { margin-bottom: 52px; }
+    .proj-section h2 {
+      font-family: 'Outfit', sans-serif; font-size: .78rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    }
+    .proj-section h2::before { content: ''; flex: 1; max-width: 32px; height: 1px; background: var(--gold); }
+    .proj-section p { font-size: 1rem; color: var(--text-2); line-height: 1.9; }
+    .proj-section p + p { margin-top: 16px; }
+    .proj-section ul { display: flex; flex-direction: column; gap: 12px; }
+    .proj-section ul li {
+      font-size: .95rem; color: var(--text-2);
+      line-height: 1.8; padding-left: 22px; position: relative;
+    }
+    .proj-section ul li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--gold); font-size: .7rem; top: 5px;
+    }
+    .proj-section ul li strong { color: var(--text); font-weight: 500; }
+
+    /* ══ BENEFIT CARDS ══ */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-bottom: 56px;
+    }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 22px; text-align: center;
+      transition: border-color .2s, transform .2s;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .stat-card:hover { border-color: var(--bord-g); transform: translateY(-3px); }
+    .stat-card .stat-icon {
+      font-size: 1.6rem; color: var(--gold);
+      background: var(--gold-dim); border: 1px solid var(--bord-g);
+      width: 48px; height: 48px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 4px;
+    }
+    .stat-card .stat-val {
+      font-family: 'Outfit', sans-serif; font-size: .9rem; font-weight: 600;
+      color: var(--text); line-height: 1.3;
+    }
+    .stat-card .stat-lbl {
+      font-size: .78rem; color: var(--text-3);
+      line-height: 1.65; letter-spacing: 0; text-transform: none;
+    }
+
+    /* ══ SUB-PROJECT DIVIDER ══ */
+    .sub-project-label {
+      display: flex; align-items: center; gap: 14px;
+      margin: 56px 0 24px;
+    }
+    .sub-project-label .sp-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700; color: var(--gold);
+      opacity: .4; line-height: 1; flex-shrink: 0;
+    }
+    .sub-project-label .sp-line { flex: 1; height: 1px; background: var(--border); }
+    .sub-project-label .sp-title {
+      font-family: 'Outfit', sans-serif; font-size: .82rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--text-2);
+    }
+
+    /* ══ IMPACT BOX ══ */
+    .impact-box {
+      background: var(--bg-card); border: 1px solid var(--bord-g);
+      border-radius: 12px; padding: 28px 32px;
+    }
+    .impact-box p { font-size: .95rem; color: var(--text-2); line-height: 1.9; }
+    .impact-box p + p { margin-top: 14px; }
+
+    /* ══ IMAGE SYSTEM ══ */
+    .img-full {
+      width: 100%; background: #0d1018;
+      border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; margin-bottom: 10px;
+      cursor: zoom-in; transition: border-color .2s;
+    }
+    .img-full:hover { border-color: var(--bord-g); }
+    .img-full img { width: 100%; display: block; object-fit: contain; background: #0d1018; }
+
+    .img-pair {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; margin-bottom: 10px;
+    }
+    .img-card {
+      background: #0d1018; border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      cursor: zoom-in; transition: border-color .2s;
+    }
+    .img-card:hover { border-color: var(--bord-g); }
+    .img-card img { width: 100%; display: block; object-fit: contain; background: #0d1018; }
+
+    .img-caption {
+      font-size: .74rem; color: var(--text-3);
+      text-align: center; margin-bottom: 40px;
+    }
+    .img-caption span {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 16px;
+      display: inline-block; line-height: 1.6;
+    }
+
+    .img-text-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 28px; align-items: center; margin-bottom: 40px;
+    }
+    .img-text-row.flip { direction: rtl; }
+    .img-text-row.flip > * { direction: ltr; }
+    .img-side {
+      background: #0d1018; border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      cursor: zoom-in; transition: border-color .2s;
+    }
+    .img-side:hover { border-color: var(--bord-g); }
+    .img-side img { width: 100%; display: block; object-fit: contain; background: #0d1018; }
+    .text-side h3 {
+      font-family: 'Outfit', sans-serif; font-size: .78rem; font-weight: 600;
+      letter-spacing: .13em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .text-side h3::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+    .text-side p { font-size: .93rem; color: var(--text-2); line-height: 1.88; }
+    .text-side p + p { margin-top: 12px; }
+
+    /* ══ TAGS & NAV ══ */
+    .proj-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      padding-top: 32px; border-top: 1px solid var(--border); margin-top: 48px;
+    }
+    .proj-tags span {
+      background: rgba(196,157,72,.07); border: 1px solid rgba(196,157,72,.2);
+      color: var(--text-2); font-size: .78rem; padding: 5px 14px; border-radius: 4px;
+    }
+    .proj-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 32px 0; border-top: 1px solid var(--border); margin-top: 16px;
+    }
+
+    /* ══ LIGHTBOX ══ */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(11,13,18,.97); backdrop-filter: blur(20px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-img {
+      max-width: 90vw; max-height: 86vh; border-radius: 8px;
+      box-shadow: 0 40px 100px rgba(0,0,0,.7); object-fit: contain;
+    }
+    .lightbox-close {
+      position: fixed; top: 20px; right: 24px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      color: var(--text-2); width: 42px; height: 42px; border-radius: 8px;
+      cursor: pointer; font-size: 1.15rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .15s, color .15s;
+    }
+    .lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-caption {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      font-size: .78rem; color: var(--text-3);
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 6px 18px; border-radius: 20px;
+      max-width: 80vw; text-align: center;
+    }
+    .lightbox-nav {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      background: var(--bg-card); border: 1px solid var(--border);
+      color: var(--text-2); width: 46px; height: 46px; border-radius: 8px;
+      cursor: pointer; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center; transition: all .15s;
+    }
+    .lightbox-nav:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 700px) {
+      .proj-body { padding: 44px 18px 64px; }
+      .proj-nav { flex-direction: column; gap: 16px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .img-pair { grid-template-columns: 1fr; }
+      .img-text-row { grid-template-columns: 1fr; }
+      .img-text-row.flip { direction: ltr; }
+      .lightbox-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="resume.pdf" class="btn btn-nav" target="_blank" rel="noopener"><i class="ph ph-file-text"></i> Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#experience" class="mobile-link">Experience</a>
+    <a href="index.html#projects" class="mobile-link">Projects</a>
+    <a href="index.html#skills" class="mobile-link">Skills</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <div class="proj-hero-orb"></div>
+  <div class="proj-hero-orb2"></div>
+  <i class="ph ph-robot icon-hero"></i>
+  <div class="container proj-hero-content">
+    <a href="index.html#projects" class="back-link"><i class="ph ph-arrow-left"></i> Back to All Projects</a>
+    <div class="proj-cat-badge">Research &amp; Academic · Automation Lab</div>
+    <h1 class="proj-title">McMaster Automation Learning Factory – Multiple Projects</h1>
+    <div class="proj-meta">
+      <span><i class="ph ph-buildings"></i> McMaster University – W Booth School</span>
+      <span><i class="ph ph-calendar"></i> 2024 – 2025</span>
+      <span><i class="ph ph-map-pin"></i> Hamilton, Ontario</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BODY ══ -->
+<div class="proj-body">
+
+  <!-- 1. OVERVIEW -->
+  <div class="proj-section">
+    <h2>Overview</h2>
+    <p>
+      As an <em>Automation Lab Research Assistant</em> at McMaster University's
+      W Booth School of Engineering Practice and Technology, I contributed to multiple
+      hands-on automation and research projects within the
+      <strong>SEPT Learning Factory</strong> — a real-world industrial automation environment
+      equipped with Allen-Bradley PLCs, HMIs, VFDs, conveyors, pneumatic systems, and robotics.
+    </p>
+    <p>
+      These projects spanned PLC programming and HMI development, pneumatic control systems,
+      RC vehicle automation with advanced electronics, and humanitarian engineering research —
+      all while simultaneously teaching Allen-Bradley PLC courses to undergraduate students
+      as a Teaching Assistant.
+    </p>
+  </div>
+
+  <!-- 2. BENEFIT CARDS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-cpu"></i></div>
+      <div class="stat-val">PLC &amp; HMI Mastery</div>
+      <div class="stat-lbl">Programmed Allen-Bradley PLCs and built FactoryTalk View HMI screens for real industrial conveyor systems used in live lab teaching</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-gear-six"></i></div>
+      <div class="stat-val">Applied Automation</div>
+      <div class="stat-lbl">Designed and tested PLC-driven pneumatic control systems, integrated VFDs for motor control, and built a sensor-equipped RC car platform</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-chalkboard-teacher"></i></div>
+      <div class="stat-val">Teaching &amp; Research</div>
+      <div class="stat-lbl">Served as TA for Advanced Allen-Bradley PLC courses while contributing to humanitarian engineering research including water filtration and assistive technology</div>
+    </div>
+  </div>
+
+  <!-- ══ PROJECT 1: CONVEYOR ══ -->
+  <div class="sub-project-label">
+    <span class="sp-num">01</span>
+    <span class="sp-line"></span>
+    <span class="sp-title">Conveyor System – PLC &amp; HMI Upgrade</span>
+    <span class="sp-line"></span>
+  </div>
+
+  <div class="proj-section">
+    <h2>What Was Done</h2>
+    <p>
+      Upgraded a <strong>FlexLink conveyor belt control system</strong> to improve reliability,
+      operator usability, and fault handling. This involved reprogramming an
+      <strong>Allen-Bradley PLC</strong> and rebuilding the operator interface in
+      <strong>FactoryTalk View</strong> — delivering a production-quality HMI mimic screen
+      showing the full conveyor layout with live state indication, spur control, and
+      Start/Stop/Reset operator controls.
+    </p>
+  </div>
+
+  <!-- HMI screen full width -->
+  <div class="img-full" data-idx="0">
+    <img src="WhatsApp_Image_2025-09-14_at_13_59_07_ec3e8e92.jpg"
+         alt="Allen-Bradley FactoryTalk View HMI showing FlexLink Conveyor Overview Mimic — Running state, Spur 1/2/3 control, Start Stop Reset buttons"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>FactoryTalk View HMI — FlexLink Conveyor Overview Mimic showing live Running state, spur zone control, and operator Start/Stop/Reset</span>
+  </p>
+
+  <!-- Conveyor physical + text -->
+  <div class="img-text-row">
+    <div class="img-side" data-idx="1">
+      <img src="WhatsApp_Image_2025-09-07_at_14_51_08_ae09163c.jpg"
+           alt="FlexLink conveyor system in McMaster Learning Factory lab — full conveyor loop with pallet carriers, sensors, E-stop, and stack light visible"
+           loading="lazy" />
+    </div>
+    <div class="text-side">
+      <h3>Scope of Work</h3>
+      <p>
+        Modified PLC ladder logic to improve conveyor sequencing, spur routing, and fault
+        handling. Upgraded HMI screens to show real-time zone status, conveyor state
+        (Aborted / Stopped / Idle / Paused / Running / Held / Complete), and operator
+        alarm visibility.
+      </p>
+      <p>
+        Also supported wiring verification and I/O checks — ensuring all sensors, VFDs,
+        and motor starters were correctly integrated before go-live in the teaching lab.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══ PROJECT 2: RC CAR / DRIVER SIM ══ -->
+  <div class="sub-project-label">
+    <span class="sp-num">02</span>
+    <span class="sp-line"></span>
+    <span class="sp-title">RC Car Platform &amp; Driver Seat Force Simulation</span>
+    <span class="sp-line"></span>
+  </div>
+
+  <div class="proj-section">
+    <h2>What Was Done</h2>
+    <p>
+      Contributed to two interconnected research platforms — an <strong>instrumented RC car</strong>
+      with embedded electronics for autonomous and remote control research, and a
+      <strong>driver seat force simulation rig</strong> that used PLC-controlled pneumatic
+      cylinders to physically simulate braking and acceleration forces on the driver.
+    </p>
+    <p>
+      My focus was on the <strong>PLC control logic for the pneumatic actuators</strong> —
+      designing the sequencing logic to synchronize actuator motion with simulated vehicle
+      dynamics in real time, and supporting troubleshooting of pneumatic circuits and
+      timing during commissioning.
+    </p>
+  </div>
+
+  <!-- RC car + driver sim pair -->
+  <div class="img-pair">
+    <div class="img-card" data-idx="2">
+      <img src="WhatsApp_Image_2025-09-14_at_13_59_07_cc3f8098.jpg"
+           alt="RC car platform chassis with Raspberry Pi, servo motors, camera module, servo controllers, and 3D-printed frame — built for autonomous and remote control research"
+           loading="lazy" />
+    </div>
+    <div class="img-card" data-idx="3">
+      <img src="WhatsApp_Image_2025-09-14_at_13_59_07_565de988.jpg"
+           alt="Driver seat force simulation rig at McMaster Learning Factory — racing seat with steering wheel, pneumatic actuators underneath, monitor and electronics cabinet alongside"
+           loading="lazy" />
+    </div>
+  </div>
+  <p class="img-caption">
+    <span>RC car platform with embedded control electronics (left) and driver seat force simulation rig with PLC-controlled pneumatic actuators (right)</span>
+  </p>
+
+  <!-- ══ FULL SCOPE ══ -->
+  <div class="proj-section">
+    <h2>Full Scope of Work</h2>
+    <ul>
+      <li>Upgraded <strong>FlexLink conveyor Allen-Bradley PLC logic</strong> — improved sequencing, fault handling, and spur zone routing</li>
+      <li>Rebuilt <strong>FactoryTalk View HMI screens</strong> — full conveyor mimic with live state, spur control, and alarm visibility for the teaching lab</li>
+      <li>Supported wiring verification, <strong>I/O checks, and VFD integration</strong> for the conveyor motor control system</li>
+      <li>Designed and programmed <strong>PLC control logic for pneumatic actuators</strong> in the driver seat force simulation rig — synchronizing actuator motion with simulated vehicle dynamics</li>
+      <li>Contributed to the <strong>RC car platform build</strong> — integrating embedded electronics including Raspberry Pi, servo controllers, camera module, and wireless communication</li>
+      <li>Supported <strong>troubleshooting of pneumatic circuits and timing</strong> during commissioning of the simulation rig</li>
+      <li>Contributed to <strong>3D-printed water filtration research</strong> for deployment in Uganda — prototyping, testing, and producing assembly documentation for local manufacturing</li>
+      <li>Supported assembly and field testing of a <strong>smart walking cane</strong> for seniors — integrating sensors for weight, temperature, heart rate, and weather display across six deployed prototypes</li>
+    </ul>
+  </div>
+
+  <!-- ══ RESULTS ══ -->
+  <div class="proj-section">
+    <h2>Results &amp; Impact</h2>
+    <div class="impact-box">
+      <p>
+        Delivered a modernized, production-quality conveyor control system used daily in
+        McMaster's teaching lab — improving the learning experience for students in
+        Allen-Bradley PLC and automation courses. The driver seat simulation rig provided
+        a hands-on research platform for vehicle dynamics study, and the RC car platform
+        contributed to ongoing autonomous systems research at the university.
+      </p>
+      <p>
+        Beyond the automation work, contributions to the Uganda water filtration project
+        and smart walking cane program demonstrated applied engineering in humanitarian
+        and healthcare contexts — delivering six working assistive device prototypes
+        deployed in a real seniors' home.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══ TAGS ══ -->
+  <div class="proj-tags">
+    <span>Allen-Bradley PLC</span>
+    <span>FactoryTalk View HMI</span>
+    <span>Studio 5000</span>
+    <span>FlexLink Conveyor</span>
+    <span>VFD Integration</span>
+    <span>Pneumatic Control</span>
+    <span>PLC Programming</span>
+    <span>Embedded Systems</span>
+    <span>Raspberry Pi</span>
+    <span>Sensor Integration</span>
+    <span>Humanitarian Engineering</span>
+    <span>Automation Research</span>
+    <span>McMaster University</span>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <div class="proj-nav">
+    <a href="index.html#projects" class="btn btn-ghost"><i class="ph ph-arrow-left"></i> All Projects</a>
+    <a href="index.html#contact" class="btn btn-primary">Get In Touch <i class="ph ph-arrow-right"></i></a>
+  </div>
+
+</div>
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lbClose" aria-label="Close"><i class="ph ph-x"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous"><i class="ph ph-arrow-left"></i></button>
+  <img class="lightbox-img" id="lbImg" src="" alt="" />
+  <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next"><i class="ph ph-arrow-right"></i></button>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="f-logo">AM<span class="dot">.</span></span>
+        <p>I&amp;C Automation &amp; Control Systems Engineer · EIT<br />Currently at AECOM.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:ahmed.mubarak.eng@gmail.com" aria-label="Email"><i class="ph ph-envelope"></i></a>
+        <a href="resume.pdf" aria-label="Resume" target="_blank"><i class="ph ph-file-text"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Ahmed Mubarak.</span>
+      <span>Engineered with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+(function () {
+  const clickables = document.querySelectorAll('[data-idx]');
+  const images = [];
+  clickables.forEach(function (el) {
+    const img = el.querySelector('img');
+    const captionEl = el.closest('.img-full, .img-pair, .img-text-row')
+                       ?.nextElementSibling?.querySelector('span');
+    images.push({
+      src: img ? img.src : '',
+      alt: img ? img.alt : '',
+      caption: captionEl ? captionEl.textContent.trim() : (img ? img.alt : '')
+    });
+  });
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCaption');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  let current = 0;
+  function openLb(idx) {
+    current = idx;
+    lbImg.src = images[idx].src;
+    lbImg.alt = images[idx].alt;
+    lbCap.textContent = images[idx].caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+  function prev() { openLb((current - 1 + clickables.length) % clickables.length); }
+  function next() { openLb((current + 1) % clickables.length); }
+  clickables.forEach(function (el, i) { el.addEventListener('click', function () { openLb(i); }); });
+  lbClose.addEventListener('click', closeLb);
+  lbPrev.addEventListener('click', prev);
+  lbNext.addEventListener('click', next);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+</script>
+</body>
+</html>
