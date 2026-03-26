@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ahmed Mubarak – Electrical, Instrumentation & Controls Engineer (EIT) at AECOM. PLC, SCADA, HMI, electrical design across energy, nuclear, defense, water, and critical infrastructure." />
+  <title>Ahmed Mubarak | I&C Automation & Control Systems Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh; padding-top: var(--nav-h);
+      display: flex; align-items: center; gap: 64px;
+      max-width: var(--max); margin: 0 auto;
+      padding-left: 32px; padding-right: 32px;
+      position: relative;
+    }
+    .hero-grid {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(196,157,72,0.1) 1px, transparent 1px);
+      background-size: 28px 28px; opacity: 0.5;
+    }
+    .orb { position: fixed; border-radius: 50%; pointer-events: none; filter: blur(90px); z-index: 0; }
+    .orb1 { width:560px; height:560px; top:-180px; right:-120px; background: radial-gradient(circle, rgba(196,157,72,0.09), transparent 70%); animation: breathe 9s ease-in-out infinite; }
+    .orb2 { width:380px; height:380px; bottom:-80px; left:-80px; background: radial-gradient(circle, rgba(80,100,200,0.06), transparent 70%); animation: breathe 11s ease-in-out infinite reverse; }
+    @keyframes breathe { 0%,100%{opacity:.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.1)} }
+    .hero-content { position:relative; z-index:1; flex:1; max-width:580px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:9px; background:var(--gold-dim); border:1px solid var(--bord-g); border-radius:100px; padding:6px 14px; font-size:0.78rem; font-weight:500; color:var(--gold); margin-bottom:26px; }
+    .badge-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); animation:blink 2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+    .hero-name { font-size:clamp(3.6rem,7vw,5.6rem); font-weight:700; line-height:1.02; letter-spacing:-0.02em; margin-bottom:18px; }
+    .hero-title-line { font-family:'Outfit',sans-serif; font-size:1rem; color:var(--text-2); margin-bottom:22px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .sep { color:var(--text-3); }
+    .tag-eit { background:var(--gold-dim); border:1px solid var(--bord-g); color:var(--gold); font-size:0.72rem; font-weight:600; letter-spacing:0.14em; padding:3px 9px; border-radius:4px; }
+    .hero-desc { font-size:1rem; color:var(--text-2); line-height:1.8; margin-bottom:14px; max-width:500px; }
+    .hero-desc strong { color:var(--text); font-weight:500; }
+    .clearance-line { font-size:0.8rem; color:var(--gold); margin-bottom:36px; opacity:0.9; }
+    .hero-cta { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:48px; }
+    .hero-stats { display:flex; align-items:center; gap:28px; padding-top:28px; border-top:1px solid var(--border); flex-wrap:wrap; }
+    .stat-num { display:block; font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:700; color:var(--gold); line-height:1; }
+    .stat-label { display:block; font-size:0.7rem; color:var(--text-3); letter-spacing:0.07em; text-transform:uppercase; margin-top:3px; }
+    .stat-div { width:1px; height:36px; background:var(--border); }
+    /* Portrait */
+    .hero-visual { position:relative; z-index:1; flex-shrink:0; width:360px; height:460px; display:flex; align-items:center; justify-content:center; }
+    .portrait-frame { width:290px; height:370px; border-radius:18px; overflow:hidden; border:1px solid var(--bord-g); background:var(--bg-card); box-shadow:0 4px 28px rgba(0,0,0,.4), 0 0 36px rgba(196,157,72,.15); }
+    .portrait-frame img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .float-pill { position:absolute; background:var(--bg-card); border:1px solid var(--bord-g); color:var(--gold); font-size:0.75rem; font-weight:600; padding:7px 14px; border-radius:100px; display:flex; align-items:center; gap:6px; animation:floatY 4s ease-in-out infinite; white-space:nowrap; box-shadow:0 4px 16px rgba(0,0,0,.3); }
+    .p1{top:8%;left:-55px;animation-delay:0s} .p2{top:35%;right:-50px;animation-delay:1s} .p3{bottom:25%;left:-60px;animation-delay:2s} .p4{bottom:8%;right:-30px;animation-delay:1.5s}
+    @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+    .scroll-cue { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); width:38px; height:38px; border:1px solid var(--border); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--text-3); font-size:.95rem; animation:bounce 2s ease-in-out infinite; transition:all .15s; z-index:2; }
+    .scroll-cue:hover { border-color:var(--gold); color:var(--gold); }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(5px)} }
+    /* ── ABOUT ── */
+    .about-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:72px; align-items:start; }
+    .about-text p { font-size:1rem; color:var(--text-2); line-height:1.82; margin-bottom:18px; }
+    .about-text strong { color:var(--text); font-weight:500; }
+    .industry-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:28px 0 32px; }
+    .ind-item { background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:14px 10px; display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; transition:all .15s; }
+    .ind-item:hover { border-color:var(--bord-g); transform:translateY(-2px); }
+    .ind-item i { font-size:1.3rem; color:var(--gold); }
+    .ind-item span { font-size:0.72rem; font-weight:500; color:var(--text-2); line-height:1.3; }
+    .about-highlights { display:flex; flex-direction:column; gap:18px; }
+    .hl-item { display:flex; align-items:flex-start; gap:14px; }
+    .hl-item>i { font-size:1.15rem; color:var(--gold); margin-top:2px; flex-shrink:0; }
+    .hl-item.clr>i { color:#6ecf8a; }
+    .hl-item.clr strong { color:#6ecf8a; }
+    .hl-item strong { display:block; font-size:.9rem; font-weight:500; margin-bottom:2px; }
+    .hl-item span { font-size:.8rem; color:var(--text-3); }
+    .about-values { display:flex; flex-direction:column; gap:18px; }
+    .value-card { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:26px; transition:all .15s; }
+    .value-card:hover { border-color:var(--bord-g); transform:translateY(-3px); }
+    .val-icon { width:42px; height:42px; background:var(--gold-dim); border:1px solid var(--bord-g); border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+    .val-icon i { font-size:1.15rem; color:var(--gold); }
+    .value-card h3 { font-family:'Outfit',sans-serif; font-size:.95rem; font-weight:600; color:var(--text); margin-bottom:8px; }
+    .value-card p { font-size:.855rem; color:var(--text-2); line-height:1.72; }
+    /* ── TIMELINE ── */
+    .timeline { position:relative; padding-left:28px; }
+    .timeline::before { content:''; position:absolute; left:0; top:8px; bottom:8px; width:1px; background:linear-gradient(to bottom,var(--gold),transparent); }
+    .tl-item { position:relative; margin-bottom:40px; }
+    .tl-item:last-child { margin-bottom:0; }
+    .tl-dot { position:absolute; left:-35px; top:26px; width:11px; height:11px; background:var(--gold); border-radius:50%; border:3px solid var(--bg-alt); box-shadow:0 0 10px rgba(196,157,72,.5); }
+    .tl-dot.cur { width:14px; height:14px; left:-37px; background:var(--gold-l); box-shadow:0 0 16px rgba(196,157,72,.7); }
+    .tl-card { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:28px 32px; transition:all .15s; }
+    .tl-card:hover { border-color:var(--bord-g); }
+    .tl-card.cur-card { border-color:var(--bord-g); background:linear-gradient(135deg,rgba(196,157,72,.06),var(--bg-card) 60%); }
+    .cur-badge { display:inline-flex; align-items:center; gap:7px; background:var(--gold-dim); border:1px solid var(--bord-g); color:var(--gold); font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:4px 12px; border-radius:4px; margin-bottom:14px; }
+    .job-head { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:16px; flex-wrap:wrap; }
+    .job-left { display:flex; align-items:flex-start; gap:14px; }
+    .co-logo-wrap { width:48px; height:48px; border-radius:8px; overflow:hidden; background:#fff; border:1px solid var(--border); flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .co-logo { width:100%; height:100%; object-fit:contain; padding:4px; }
+    .co-text { font-family:'Outfit',sans-serif; font-weight:800; font-size:.85rem; color:#1a6fb5; letter-spacing:.05em; }
+    .job-title { font-family:'Outfit',sans-serif; font-size:1rem; font-weight:600; color:var(--text); margin-bottom:4px; }
+    .job-co { font-size:.875rem; color:var(--gold); font-weight:500; display:flex; align-items:center; gap:5px; }
+    .job-co a { color:inherit; transition:color .15s; }
+    .job-co a:hover { color:var(--gold-l); }
+    .job-meta { display:flex; flex-direction:column; align-items:flex-end; gap:5px; flex-shrink:0; }
+    .job-meta span { font-size:.78rem; color:var(--text-3); display:flex; align-items:center; gap:5px; }
+    .job-type { background:var(--gold-dim); border:1px solid var(--bord-g); color:var(--gold) !important; font-size:.7rem !important; font-weight:600 !important; letter-spacing:.08em; padding:2px 9px; border-radius:4px; }
+    .job-type.ft { background:rgba(90,200,115,.1); border-color:rgba(90,200,115,.3); color:#6ecf8a !important; }
+    .bullets { margin-bottom:14px; }
+    .bullets li { font-size:.875rem; color:var(--text-2); line-height:1.75; padding-left:18px; position:relative; margin-bottom:6px; }
+    .bullets li::before { content:'▸'; position:absolute; left:0; color:var(--gold); font-size:.65rem; top:5px; }
+    .bullets li strong { color:var(--text); font-weight:500; }
+    /* ── PROJECTS GRID ── */
+    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .proj-card { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:all .2s; text-decoration:none; color:inherit; }
+    .proj-card:hover { transform:translateY(-6px); border-color:var(--bord-g); box-shadow:0 12px 40px rgba(0,0,0,.35), 0 0 28px rgba(196,157,72,.1); }
+    .pc-top { height:140px; display:flex; align-items:center; justify-content:center; position:relative; }
+    .pc-bg1{background:linear-gradient(135deg,#141b2e,#0e1420)}
+    .pc-bg2{background:linear-gradient(135deg,#1a1408,#0f0e05)}
+    .pc-bg3{background:linear-gradient(135deg,#0e1a20,#091015)}
+    .pc-bg4{background:linear-gradient(135deg,#0e1a18,#091214)}
+    .pc-bg5{background:linear-gradient(135deg,#10141e,#080c18)}
+    .pc-bg6{background:linear-gradient(135deg,#1a140e,#120e08)}
+    .pc-icon-big { font-size:2.8rem; color:var(--gold); opacity:.35; }
+    .pc-cat { position:absolute; top:12px; left:12px; background:rgba(11,13,18,.85); border:1px solid var(--bord-g); color:var(--gold); font-size:.68rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; border-radius:4px; backdrop-filter:blur(8px); }
+    .pc-body { padding:22px; flex:1; display:flex; flex-direction:column; }
+    .pc-body h3 { font-family:'Outfit',sans-serif; font-size:.95rem; font-weight:600; color:var(--text); margin-bottom:10px; line-height:1.4; }
+    .pc-body p { font-size:.845rem; color:var(--text-2); line-height:1.75; margin-bottom:14px; flex:1; }
+    .pc-stack { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:14px; }
+    .pc-stack span { background:rgba(255,255,255,.03); border:1px solid var(--border); color:var(--text-3); font-size:.7rem; padding:2px 9px; border-radius:3px; }
+    .pc-link { display:flex; align-items:center; gap:6px; font-size:.82rem; font-weight:600; color:var(--gold); margin-top:auto; padding-top:14px; border-top:1px solid var(--border); transition:gap .15s; }
+    .proj-card:hover .pc-link { gap:10px; }
+    /* ── SKILLS ── */
+    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .skill-block { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:24px; transition:border-color .15s; }
+    .skill-block:hover { border-color:var(--bord-g); }
+    .sb-head { display:flex; align-items:center; gap:10px; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+    .sb-head i { font-size:1.05rem; color:var(--gold); }
+    .sb-head h3 { font-family:'Outfit',sans-serif; font-size:.88rem; font-weight:600; color:var(--text); }
+    .pills { display:flex; flex-wrap:wrap; gap:7px; }
+    .pills span { background:rgba(196,157,72,.05); border:1px solid rgba(196,157,72,.14); color:var(--text-2); font-size:.76rem; padding:4px 11px; border-radius:4px; transition:all .15s; }
+    .pills span:hover { background:var(--gold-dim); color:var(--gold); }
+    /* ── RESUME BANNER ── */
+    .resume-section { padding:64px 0; }
+    .resume-banner { background:linear-gradient(135deg,var(--bg-card),var(--bg-alt)); border:1px solid var(--bord-g); border-radius:18px; padding:52px 60px; display:flex; align-items:center; justify-content:space-between; gap:40px; position:relative; overflow:hidden; box-shadow:0 0 36px rgba(196,157,72,.12); }
+    .resume-banner::before { content:''; position:absolute; top:-70px; right:-70px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(196,157,72,.08),transparent 70%); pointer-events:none; }
+    .rb-text h2 { font-size:1.75rem; margin-bottom:8px; }
+    .rb-text p { color:var(--text-2); font-size:.92rem; max-width:480px; }
+    .rb-btns { display:flex; gap:12px; flex-shrink:0; flex-wrap:wrap; }
+    /* ── CONTACT ── */
+    .contact-sub { color:var(--text-2); font-size:1rem; max-width:520px; margin-bottom:48px; }
+    .contact-layout { display:grid; grid-template-columns:1fr 1.4fr; gap:56px; align-items:start; }
+    .contact-cards { display:flex; flex-direction:column; gap:14px; }
+    .c-card { display:flex; align-items:center; gap:14px; background:var(--bg-card); border:1px solid var(--border); border-radius:11px; padding:18px 22px; transition:all .15s; }
+    a.c-card:hover { border-color:var(--bord-g); transform:translateX(4px); }
+    .cc-icon { width:38px; height:38px; background:var(--gold-dim); border:1px solid var(--bord-g); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .cc-icon i { font-size:.95rem; color:var(--gold); }
+    .cc-label { display:block; font-size:.68rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); margin-bottom:2px; }
+    .cc-val { display:block; font-size:.85rem; color:var(--text-2); }
+    .contact-form { display:flex; flex-direction:column; gap:16px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .fg { display:flex; flex-direction:column; gap:7px; }
+    .fg label { font-size:.78rem; font-weight:500; color:var(--text-2); }
+    .fg input, .fg textarea { background:var(--bg-card); border:1px solid var(--border); border-radius:7px; padding:12px 15px; color:var(--text); font-family:'Outfit',sans-serif; font-size:.88rem; outline:none; resize:vertical; transition:border-color .15s, box-shadow .15s; }
+    .fg input::placeholder, .fg textarea::placeholder { color:var(--text-3); }
+    .fg input:focus, .fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(196,157,72,.08); }
+    .btn-full { width:100%; justify-content:center; }
+    .form-note { font-size:.78rem; color:var(--text-3); text-align:center; }
+    .form-note a { color:var(--gold); text-decoration:underline; }
+    /* ── RESPONSIVE ── */
+    @media(max-width:1080px){
+      .skills-grid{grid-template-columns:repeat(2,1fr)}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .industry-grid{grid-template-columns:repeat(4,1fr)}
+    }
+    @media(max-width:900px){
+      #hero{flex-direction:column;min-height:auto;padding-top:calc(var(--nav-h) + 40px);padding-bottom:56px;gap:40px}
+      .hero-content{max-width:100%}
+      .hero-visual{width:100%;height:320px}
+      .portrait-frame{width:210px;height:270px}
+      .float-pill{display:none}
+      .scroll-cue{display:none}
+      .about-grid{grid-template-columns:1fr;gap:44px}
+      .contact-layout{grid-template-columns:1fr;gap:36px}
+      .resume-banner{flex-direction:column;padding:36px 32px;text-align:center}
+      .rb-btns{justify-content:center}
+    }
+    @media(max-width:700px){
+      .projects-grid{grid-template-columns:1fr}
+      .skills-grid{grid-template-columns:1fr}
+      .industry-grid{grid-template-columns:repeat(2,1fr)}
+      .form-row{grid-template-columns:1fr}
+      .hero-cta{flex-direction:column}
+      .hero-cta .btn{width:100%;justify-content:center}
+      .job-head{flex-direction:column;gap:10px}
+      .job-meta{align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="resume.pdf" class="btn btn-nav" target="_blank" rel="noopener">
+      <i class="ph ph-file-text"></i> Resume
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="resume.pdf" class="mobile-link resume-mobile" target="_blank">Download Resume</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="orb orb1" aria-hidden="true"></div>
+  <div class="orb orb2" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge reveal">
+      <span class="badge-dot"></span>
+      Currently at AECOM &nbsp;·&nbsp; Open to New Opportunities
+    </div>
+    <h1 class="hero-name reveal">Ahmed<br /><em>Mubarak</em></h1>
+    <p class="hero-title-line reveal">
+      I&amp;C Automation &amp; Control Systems Engineer
+      <span class="sep">·</span>
+      <span class="tag-eit">EIT</span>
+    </p>
+   <p class="hero-desc reveal">
+  Automation &amp; Control Systems Engineer <strong>(EIT)</strong> delivering
+  <strong>PLC, SCADA, HMI, and electrical control solutions</strong> across
+  <strong>energy, power generation, nuclear, water/wastewater, defense,
+  building automation, and heavy industrial</strong> sectors.
+  Experience at <strong>AECOM, GE Vernova, JNE Group,</strong> and
+  <strong>Salford Group (Linamar)</strong> — from full electrical design
+  and P&amp;ID analysis through FAT/SAT, commissioning, and operator handover.
+  Delivered production-grade systems for major clients across multiple
+  critical industries. Academic excellence —
+  <strong>10.7 GPA, Dean's Honour List</strong>.
+  <strong>Held multible academic roles at Mcmaster University</strong>
+</p>
+    <p class="clearance-line reveal">
+      🔐 Bruce Power Security Clearance &nbsp;·&nbsp; Government of Canada Reliability Clearance
+    </p>
+    <div class="hero-cta reveal">
+      <a href="#projects" class="btn btn-primary">View My Work <i class="ph ph-arrow-right"></i></a>
+      <a href="resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">
+        <i class="ph ph-download-simple"></i> Download Resume
+      </a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Industries</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Power Stations</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">PLC Platforms</span></div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <div class="portrait-wrap" style="position:relative">
+      <div class="portrait-frame">
+        <img src="profile.jpg" alt="Ahmed Mubarak" />
+      </div>
+      <div class="float-pill p1"><i class="ph ph-lightning"></i> Energy & Power</div>
+      <div class="float-pill p2"><i class="ph ph-atom"></i> Nuclear</div>
+      <div class="float-pill p3"><i class="ph ph-cpu"></i> PLC/SCADA</div>
+      <div class="float-pill p4"><i class="ph ph-shield-check"></i> Cleared</div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue"><i class="ph ph-arrow-down"></i></a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label reveal">About Me</div>
+    <h2 class="section-title reveal">Built for the field.<br /><em>Driven by purpose.</em></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm <strong>Ahmed Mubarak</strong> — an I&amp;C Automation and Control Systems Engineer (EIT) currently at <strong>AECOM</strong>, one of the world's leading engineering firms, where I contribute to the design and delivery of electrical and automation systems for large-scale projects across <strong>energy, power generation, nuclear, defense, water/wastewater, and critical infrastructure</strong>.</p>
+<p>My experience spans some of Canada's most demanding engineering environments — critical outage operations across <strong>five Ontario power stations with GE Vernova</strong>, including gas &amp; steam turbine maintenance, generator overhauls, and HMI/SCADA upgrades. At <strong>JNE Group</strong>, I programmed PLC systems and designed control panels and electrical schematics for major steel producers including <strong>US Steel, Dofasco, STELCO, and Algoma</strong>. At <strong>Midwest Services Canada</strong>, I engineered a full building automation system for a <strong>Marriott hotel</strong> from design through commissioning. At <strong>Salford Group (Linamar)</strong>, I designed control harnesses and vehicle control systems for agricultural machinery. Beyond industry, I served as an <strong>Automation Lab Research Assistant</strong> and <strong>Teaching Assistant</strong> at McMaster University for Advanced Allen-Bradley PLCs, control systems, and core engineering fundamentals.</p>
+<p>I hold an active <strong>Bruce Power Security Clearance</strong> and <strong>Government of Canada Reliability &amp; Nuclear Clearance</strong> — trusted to work on Canada's most sensitive nuclear and federal infrastructure. My work is driven by <strong>precision, accountability, and the ability to deliver under pressure</strong> — bringing a high level of reliability and performance to every system I design and deploy.</p>
+
+        <div class="industry-grid">
+          <div class="ind-item"><i class="ph ph-lightning"></i><span>Energy &amp; Power</span></div>
+          <div class="ind-item"><i class="ph ph-atom"></i><span>Nuclear</span></div>
+          <div class="ind-item"><i class="ph ph-shield"></i><span>Defense</span></div>
+          <div class="ind-item"><i class="ph ph-drop"></i><span>Water / Wastewater</span></div>
+          <div class="ind-item"><i class="ph ph-factory"></i><span>Steel Manufacturing</span></div>
+          <div class="ind-item"><i class="ph ph-buildings"></i><span>Building Automation</span></div>
+          <div class="ind-item"><i class="ph ph-tractor"></i><span>Agricultural Machinery</span></div>
+          <div class="ind-item"><i class="ph ph-lock-key"></i><span>Critical Infrastructure</span></div>
+        </div>
+
+        <div class="about-highlights">
+          <div class="hl-item clr"><i class="ph ph-shield-check"></i><div><strong>Bruce Power Security Clearance</strong><span>Nuclear facility access — Ontario</span></div></div>
+          <div class="hl-item clr"><i class="ph ph-shield-check"></i><div><strong>Government of Canada Reliability Clearance</strong><span>Federal government security screening</span></div></div>
+          <div class="hl-item"><i class="ph ph-seal-check"></i><div><strong>Engineer-in-Training (EIT)</strong><span>Professional Engineers Ontario (PEO)</span></div></div>
+          <div class="hl-item"><i class="ph ph-graduation-cap"></i><div><strong>B.Tech – Automation Engineering Technology</strong><span>McMaster University · 2021 – 2025</span></div></div>
+          <div class="hl-item"><i class="ph ph-graduation-cap"></i><div><strong>Advanced Diploma – Chemical Engineering Process Design</strong><span>Mohawk College · 2021 – 2023</span></div></div>
+          <div class="hl-item"><i class="ph ph-map-pin"></i><div><strong>Based in Mississauga, Ontario</strong><span>Open to on-site, hybrid &amp; travel roles</span></div></div>
+        </div>
+      </div>
+
+      <div class="about-values reveal">
+        <div class="value-card"><div class="val-icon"><i class="ph ph-cpu"></i></div><h3>Multi-Platform PLC/SCADA</h3><p>Allen-Bradley, Siemens, Omron, and Schneider PLCs — paired with FactoryTalk, WinCC, GE Cimplicity, AVEVA, and Ignition. I adapt to any stack the project demands.</p></div>
+        <div class="value-card"><div class="val-icon"><i class="ph ph-file-doc"></i></div><h3>Full Engineering Lifecycle</h3><p>P&amp;ID interpretation, I/O lists, schematic design, panel layouts, FAT/SAT testing, site commissioning, and operator training — I own every phase.</p></div>
+        <div class="value-card"><div class="val-icon"><i class="ph ph-shield-check"></i></div><h3>Cleared for Sensitive Work</h3><p>Bruce Power Security Clearance and Government of Canada Reliability Clearance — trusted for nuclear, defense, and critical federal infrastructure environments.</p></div>
+        <div class="value-card"><div class="val-icon"><i class="ph ph-wrench"></i></div><h3>Field-Proven &amp; Safety-First</h3><p>Turbine outages, live plant environments, CSA-compliant builds — I deliver under pressure with zero compromise on safety standards.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section-dark">
+  <div class="container">
+    <div class="section-label reveal">Experience</div>
+    <h2 class="section-title reveal">Where I've <em>Made an Impact</em></h2>
+    <div class="timeline">
+
+      <!-- AECOM -->
+      <div class="tl-item reveal">
+        <div class="tl-dot cur"></div>
+        <div class="tl-card cur-card">
+          <div class="cur-badge"><i class="ph ph-circle-wavy-check"></i> Current Role</div>
+          <div class="job-head">
+            <div class="job-left">
+              <div class="co-logo-wrap"><a href="https://aecom.com/" target="_blank" rel="noopener noreferrer"><span class="co-text">AECOM</span></a></div>
+              <div>
+                <div class="job-title">Electrical Inustrumentation & Controls Engineer (I&amp;C) – EIT</div>
+                <div class="job-co"><i class="ph ph-buildings"></i> AECOM</div>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span><i class="ph ph-calendar"></i> Nov 2025 – Present</span>
+              <span class="job-type ft">Full-Time</span>
+            </div>
+          </div>
+        <ul class="bullets">
+  <li>Design I&amp;C and electrical systems for large-scale projects across <strong>energy, nuclear, defense, water/wastewater, and critical infrastructure</strong> — reviewing P&amp;IDs and translating process requirements into <strong>control schematics, panel layouts, I/O lists, and loop diagrams</strong> to construction-ready standards.</li>
+  <li>Designed <strong>SCADA/HMI systems using GE iFIX</strong> for the <strong>Lisgar Water Treatment Plant</strong> — developing operator screens and supporting system architecture for process monitoring and control.</li>
+  <li>Contribute to <strong>PLC programming and control system development</strong> for municipal water treatment, wastewater, defense, and critical infrastructure facilities.</li>
+  <li>Support <strong>FAT/SAT testing, commissioning, and system startup</strong> — collaborating with multidisciplinary engineering teams to verify control system functionality and ensure safe, reliable, and standards-compliant project delivery.</li>
+  <li>Produce complete <strong>electrical drawing packages for construction</strong> — schematics, panel layouts, BOM preparation, vendor package review, and coordination with multidisciplinary engineering teams.</li>
+</ul>
+          <div class="tags"><span>Energy</span><span>Nuclear</span><span>Defense</span><span>Water/Wastewater</span><span>Critical Infrastructure</span><span>SCADA/HMI</span><span>FAT/SAT</span><span>GE Control Systems</span><span>P&ID Analysis</span><span>Panel Layouts</span><span>Electrical Design</span></div>
+        </div>
+      </div>
+
+      <!-- JNE -->
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="job-head">
+            <div class="job-left">
+              <div class="co-logo-wrap"><img src="jne.jpg" alt="JNE" class="co-logo" onerror="this.parentElement.innerHTML='<span class=co-text>JNE</span>'" /></div>
+              <div>
+                <div class="job-title">Automation &amp; Controls Engineer</div>
+                <div class="job-co"><i class="ph ph-buildings"></i> <a href="https://jnegroup.com" target="_blank">JNE Group</a></div>
+              </div>
+            </div>
+            <div class="job-meta"><span><i class="ph ph-calendar"></i> May – Sept 2025</span><span class="job-type">Co-op</span></div>
+          </div>
+          <ul class="bullets">
+            <li>Designed, programmed, and commissioned Allen-Bradley (Studio 5000) and Siemens (TIA Portal) PLC/HMI systems for <strong>Dofasco, STELCO, Algoma Steel, and US Steel</strong>.</li>
+            <li>Engineered complete control system for <strong>US Steel's HDGL wastewater plant</strong> — 368+ point I/O list, AutoCAD schematics, and panel layouts from P&amp;ID analysis.</li>
+            <li>Designed high-voltage motor control and power distribution panels to CSA/ISA standards. Upgraded legacy relay logic to modern PLC-based control.</li>
+          </ul>
+          <div class="tags"><span>Studio 5000</span><span>TIA Portal</span><span>AutoCAD Electrical</span><span>FAT/SAT</span><span>Steel Manufacturing</span></div>
+        </div>
+      </div>
+
+      <!-- Midwest -->
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="job-head">
+            <div class="job-left">
+              <div class="co-logo-wrap"><img src="midwest.png" alt="Midwest" class="co-logo" onerror="this.parentElement.innerHTML='<span class=co-text>MSC</span>'" /></div>
+              <div>
+                <div class="job-title">Control Systems Engineer</div>
+                <div class="job-co"><i class="ph ph-buildings"></i> <a href="https://midwestservicescanada.com" target="_blank">Midwest Services Canada</a></div>
+              </div>
+            </div>
+            <div class="job-meta"><span><i class="ph ph-calendar"></i> Nov 2024 – May 2025</span><span class="job-type">Part-Time</span></div>
+          </div>
+         <ul class="bullets">
+  <li>Led the design and implementation of automation solutions for commercial building applications — integrating system architecture, <strong>control panel layouts, and Siemens PLC/HMI programming</strong> for real-world deployed systems.</li>
+  <li>Provided full engineering from design to implementation for the <strong>Delta Marriott Hotel's networked compressor control system</strong> — including <strong>electrical design, panel building, and on-site commissioning</strong> — delivering real-time alarms, automated daily engineer reports, and preventive maintenance scheduling.</li>
+  <li>Built and certified <strong>CSA-compliant custom control panels</strong> to Ontario Electrical Code — achieving full <strong>ESA/ESAFE certification</strong> before client handover.</li>
+  <li>Trained hotel engineering staff on system operation, fault response, and maintenance procedures — delivering a complete documentation package including wiring drawings and maintenance manuals.</li>
+</ul>
+<div class="tags">
+  <span>Siemens PLC/HMI</span>
+  <span>Siemens LOGO!</span>
+  <span>Building Automation</span>
+  <span>AutoCAD Electrical</span>
+  <span>Panel Design &amp; Build</span>
+  <span>CSA Compliance</span>
+  <span>ESA/ESAFE Certified</span>
+  <span>On-Site Commissioning</span>
+  <span>Operator Training</span>
+</div>
+      </div>
+
+      <!-- GE Vernova -->
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="job-head">
+            <div class="job-left">
+              <div class="co-logo-wrap"><img src="gevernova.png" alt="GE" class="co-logo" onerror="this.parentElement.innerHTML='<span class=co-text>GE</span>'" /></div>
+              <div>
+                <div class="job-title">Electrical / Controls Field Engineer</div>
+                <div class="job-co"><i class="ph ph-buildings"></i> <a href="https://gevernova.com" target="_blank">GE Vernova</a></div>
+              </div>
+            </div>
+            <div class="job-meta"><span><i class="ph ph-calendar"></i> Jan – Sept 2024</span><span class="job-type">Co-op</span></div>
+          </div>
+         <ul class="bullets">
+  <li>Supported <strong>commissioning, maintenance, and upgrades of control systems</strong> for gas turbines, steam turbines, and generators during Ontario's 2024 Spring Outage Season across <strong>five power stations</strong>.</li>
+  <li>Worked alongside senior field engineers on <strong>GE Speedtronic (Mark V, Mark VI, Mark VIe)</strong> control systems — supporting troubleshooting, diagnostics, and resolution of turbine control and instrumentation issues on-site.</li>
+  <li>Performed <strong>field commissioning and testing on live equipment</strong> — loop checks, signal verification, and control system validation during active outage projects.</li>
+  <li>Contributed to <strong>SCADA/HMI updates and control system software upgrades</strong> for gas turbine stations — including exposure to <strong>LCI and excitation systems</strong>.</li>
+  <li>Collaborated with multidisciplinary teams (Mechanical, Electrical, Controls) to support <strong>safe and efficient execution of power generation projects</strong> — enforcing LOTO, confined space protocols, and daily safety briefings across all five sites.</li>
+  <li>Actively participated in internal and external planning meetings alongside <strong>senior project managers and Canada's lead engineers</strong> to support project execution and scheduling.</li>
+</ul>
+<div class="tags">
+  <span>GE Speedtronic Mark V/VI/VIe</span>
+  <span>DCS Systems</span>
+  <span>GE Cimplicity</span>
+  <span>SCADA/HMI Upgrades</span>
+  <span>Gas Turbines</span>
+  <span>Steam Turbines</span>
+  <span>LCI &amp; Excitation Systems</span>
+  <span>Field Commissioning</span>
+  <span>Loop Checks</span>
+  <span>LOTO / Safety</span>
+  <span>Outage Planning</span>
+</div>
+      </div>
+
+      <!-- Salford -->
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="job-head">
+            <div class="job-left">
+              <div class="co-logo-wrap"><img src="salford.png" alt="Salford" class="co-logo" onerror="this.parentElement.innerHTML='<span class=co-text>SG</span>'" /></div>
+              <div>
+                <div class="job-title">Electrical Design Engineer</div>
+                <div class="job-co"><i class="ph ph-buildings"></i> <a href="https://salfordgroup.com" target="_blank">Salford Group (Linamar)</a></div>
+              </div>
+            </div>
+            <div class="job-meta"><span><i class="ph ph-calendar"></i> May – Sept 2023</span><span class="job-type">Co-op</span></div>
+          </div>
+          <ul class="bullets">
+            <li>Designed <strong>electrical harnesses<strong>, <strong>routing diagrams<strong>, and <strong>control panel schematics in AutoCAD Electrical <strong>for agricultural vehicles.</li>
+            <li>Programmed and optimized <strong>Fanuc robotic systems</strong> for welding and assembly — reducing cycle time and increasing efficiency.</li>
+          </ul>
+          <div class="tags"><span>AutoCAD Electrical</span><span>Fanuc Robotics</span><span>Harness Design</span><span>Agricultural Machinery</span></div>
+        </div>
+      </div>
+
+      <!-- McMaster TA -->
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="job-head">
+            <div class="job-left">
+              <div class="co-logo-wrap"><img src="mcmaster.webp" alt="McMaster" class="co-logo" onerror="this.parentElement.innerHTML='<span class=co-text style=color:#7a003c>MAC</span>'" /></div>
+              <div>
+                <div class="job-title">Teaching Assistant – Multiple Courses</div>
+                <div class="job-co"><i class="ph ph-buildings"></i> McMaster University</div>
+              </div>
+            </div>
+            <div class="job-meta"><span><i class="ph ph-calendar"></i> 2024 – 2025</span><span class="job-type">Part-Time</span></div>
+          </div>
+          <ul class="bullets">
+            <li><strong>Allen Bradley PLC Advanced (3PL3)</strong> — Sept–Dec 2025</li>
+            <li><strong>Allen Bradley PLC (2PL3)</strong> — Jan–April 2025</li>
+            <li><strong>Chemical Engineering Process Design (2EC3)</strong> — Jan–April 2025</li>
+            <li><strong>Math 1 (1MC3)</strong> — Sept–Dec 2024</li>
+          </ul>
+          <div class="tags"><span>PLC Instruction</span><span>Allen Bradley</span><span>Chemical Engineering</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label reveal">Featured Projects</div>
+    <h2 class="section-title reveal">Work That <em>Speaks for Itself</em></h2>
+    <p class="reveal" style="color:var(--text-3);font-size:.85rem;margin-top:-36px;margin-bottom:40px;display:flex;align-items:center;gap:7px;">
+      <i class="ph ph-cursor-click" style="color:var(--gold)"></i> Click any project to see full details
+    </p>
+
+    <div class="projects-grid">
+
+      <a href="project-delta-hotel.html" class="proj-card reveal">
+        <div class="pc-top pc-bg1">
+          <i class="ph ph-buildings-bold pc-icon-big"></i>
+          <span class="pc-cat">Building Automation · Capstone</span>
+        </div>
+        <div class="pc-body">
+          <h3>Delta (Marriott) Ottawa Hotel – Dual Air Compressor BAS</h3>
+          <p>Full-lifecycle design and commissioning of a networked building automation system using Siemens LOGO! PLC. Delivered leak alarms, daily reports, and CSA-certified panels.</p>
+          <div class="pc-stack"><span>Siemens LOGO!</span><span>AutoCAD Electrical</span><span>Panel Design</span><span>ESA/ESAFE Certified</span></div>
+          <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
+        </div>
+      </a>
+
+      <a href="project-ge-vernova.html" class="proj-card reveal">
+        <div class="pc-top pc-bg2">
+          <i class="ph ph-lightning-bold pc-icon-big"></i>
+          <span class="pc-cat">Power Generation</span>
+        </div>
+        <div class="pc-body">
+          <h3>GE Vernova – 2024 Spring Outage (5 Power Stations)</h3>
+          <p>Field engineering across five Ontario power stations — turbine outage support, DCS diagnostics, and HMI upgrades using GE Cimplicity. ~90% travel.</p>
+          <div class="pc-stack"><span>DCS</span><span>GE Cimplicity</span><span>Gas Turbines</span><span>Steam Turbines</span></div>
+          <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
+        </div>
+      </a>
+
+      <a href="project-swimming-pool.html" class="proj-card reveal">
+        <div class="pc-top pc-bg6">
+          <i class="ph ph-waves pc-icon-big"></i>
+          <span class="pc-cat">Industrial Automation · Capstone</span>
+        </div>
+        <div class="pc-body">
+          <h3>Automated Swimming Pool Control System</h3>
+          <p>Allen-Bradley PLC system automating water level, temperature, chemical dosing, and pH. Industrial panel with safety interlocks and FactoryTalk View HMI.</p>
+          <div class="pc-stack"><span>Allen-Bradley</span><span>Studio 5000</span><span>FactoryTalk View</span><span>Safety Interlocks</span></div>
+          <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
+        </div>
+      </a>
+
+      <a href="project-us-steel.html" class="proj-card reveal">
+        <div class="pc-top pc-bg3">
+          <i class="ph ph-factory pc-icon-big"></i>
+          <span class="pc-cat">Steel / Water Treatment</span>
+        </div>
+        <div class="pc-body">
+          <h3>US Steel HDGL – Wastewater Treatment Control System</h3>
+          <p>Complete control system engineering — 368+ point I/O list, AutoCAD schematics, and panel layouts from P&amp;ID analysis for US Steel's HDGL wastewater plant.</p>
+          <div class="pc-stack"><span>Allen-Bradley</span><span>Studio 5000</span><span>AutoCAD Electrical</span><span>368+ I/O</span></div>
+          <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
+        </div>
+      </a>
+
+      <a href="project-bottling-station.html" class="proj-card reveal">
+        <div class="pc-top pc-bg4">
+          <i class="ph ph-drop pc-icon-big"></i>
+          <span class="pc-cat">Industrial Process Control</span>
+        </div>
+        <div class="pc-body">
+          <h3>SMC IPC-202A Bottling Station – Omron PLC &amp; HMI</h3>
+          <p>Installed, wired, and programmed a bottling station with Omron PLC, pneumatic actuators, safety interlocks, and dual-mode HMI operator screens.</p>
+          <div class="pc-stack"><span>Omron PLC</span><span>Sysmac Studio</span><span>HMI</span><span>Pneumatics</span></div>
+          <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
+        </div>
+      </a>
+
+      <a href="project-hvac.html" class="proj-card reveal">
+        <div class="pc-top pc-bg5">
+          <i class="ph ph-thermometer pc-icon-big"></i>
+          <span class="pc-cat">Building Automation</span>
+        </div>
+        <div class="pc-body">
+          <h3>HVAC Control System – Schneider M172 PLC</h3>
+          <p>Zone-based HVAC automation with professional-grade panel, motorized valve, heating/cooling sequences, BACnet integration, and full documentation.</p>
+          <div class="pc-stack"><span>Schneider M172</span><span>HVAC Logic</span><span>Panel Design</span><span>BACnet</span></div>
+          <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
+        </div>
+      </a>
+ <a href="project-mcmaster-lab.html" class="proj-card reveal">
+        <div class="pc-top pc-bg4">
+          <i class="ph ph-robot pc-icon-big"></i>
+          <span class="pc-cat">Research &amp; Academic · Automation Lab</span>
+        </div>
+        <div class="pc-body">
+          <h3>McMaster Automation Learning Factory – Multiple Projects</h3>
+          <p>Allen-Bradley PLC & FactoryTalk HMI upgrade for industrial conveyor, PLC-driven pneumatic driver simulation rig, RC car platform with embedded electronics, and humanitarian engineering research.</p>
+          <div class="pc-stack"><span>Allen-Bradley PLC</span><span>FactoryTalk View</span><span>Pneumatics</span><span>Embedded Systems</span></div>
+          <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
+        </div>
+      </a>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section-dark">
+  <div class="container">
+    <div class="section-label reveal">Technical Skills</div>
+    <h2 class="section-title reveal">The Full <em>Arsenal</em></h2>
+    <div class="skills-grid">
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-cpu"></i><h3>PLC Platforms</h3></div><div class="pills"><span>Allen-Bradley (Studio 5000 / RSLogix)</span><span>Siemens (TIA Portal / S7-1200/1500 / LOGO!)</span><span>Omron (Sysmac / CX-Programmer)</span><span>Schneider (M172 / Modicon)</span><span>Ladder Logic</span><span>Structured Text</span><span>FBD</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-monitor-play"></i><h3>SCADA &amp; HMI</h3></div><div class="pills"><span>FactoryTalk View SE/ME</span><span>Siemens WinCC</span><span>GE Proficy / Cimplicity / iFIX</span><span>AVEVA</span><span>Ignition</span><span>PanelView</span><span>LabVIEW</span><span>Ubidots / MQTT</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-lightning"></i><h3>Electrical &amp; I&amp;C Design</h3></div><div class="pills"><span>AutoCAD Electrical</span><span>EPLAN</span><span>Revit</span><span>SolidWorks</span><span>P&amp;ID Interpretation</span><span>Panel Layouts</span><span>I/O Lists &amp; Loop Diagrams</span><span>MCC &amp; Power Distribution</span><span>VFD Config</span><span>BOM Preparation</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-gauge"></i><h3>Field &amp; Instrumentation</h3></div><div class="pills"><span>FAT / SAT / Commissioning</span><span>DCS Integration</span><span>Turbine &amp; Generator Testing</span><span>Root Cause Analysis</span><span>Flow / Pressure / Temp Sensors</span><span>pH / Turbidity / Vibration</span><span>Instrumentation Sizing</span><span>LOTO</span><span>HART Protocol</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-git-network"></i><h3>Industrial Networks</h3></div><div class="pills"><span>EtherNet/IP</span><span>PROFINET</span><span>Modbus TCP/IP</span><span>PROFIBUS</span><span>DeviceNet</span><span>BACnet</span><span>HART</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-code"></i><h3>Software &amp; Programming</h3></div><div class="pills"><span>Python</span><span>MATLAB / Simulink</span><span>C / C++</span><span>Verilog</span><span>VBA</span><span>Fanuc TP Programming</span><span>Roboguide</span><span>Fusion 360</span><span>Multisim</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME BANNER -->
+<section class="resume-section">
+  <div class="container">
+    <div class="resume-banner reveal">
+      <div class="rb-text">
+        <h2>Want the full picture?</h2>
+        <p>Download my resume for a complete view of my experience, clearances, and technical qualifications.</p>
+      </div>
+      <div class="rb-btns">
+        <a href="resume.pdf" class="btn btn-primary" target="_blank" rel="noopener"><i class="ph ph-download-simple"></i> Download Resume</a>
+        <a href="resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener"><i class="ph ph-eye"></i> View PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-dark">
+  <div class="container">
+    <div class="section-label reveal">Let's Connect</div>
+    <h2 class="section-title reveal">Open to <em>Opportunities</em></h2>
+    <p class="contact-sub reveal">Whether you're looking for an automation engineer, want to collaborate, or just want to connect — I'd love to hear from you.</p>
+    <div class="contact-layout">
+      <div class="contact-cards reveal">
+        <a href="/cdn-cgi/l/email-protection#f89990959d9cd6958d9a998a9993d69d969fb89f95999194d69b9795" class="c-card"><div class="cc-icon"><i class="ph ph-envelope"></i></div><div><span class="cc-label">Email</span><span class="cc-val"><span class="__cf_email__" data-cfemail="b5d4ddd8d0d19bd8c0d7d4c7d4de9bd0dbd2f5d2d8d4dcd99bd6dad8">[email&#160;protected]</span></span></div></a>
+        <a href="tel:6473953551" class="c-card"><div class="cc-icon"><i class="ph ph-phone"></i></div><div><span class="cc-label">Phone</span><span class="cc-val">647-395-3551</span></div></a>
+        <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" class="c-card" target="_blank" rel="noopener"><div class="cc-icon"><i class="ph ph-linkedin-logo"></i></div><div><span class="cc-label">LinkedIn</span><span class="cc-val">linkedin.com/in/ahmed-mubarak-eng</span></div></a>
+        <div class="c-card"><div class="cc-icon"><i class="ph ph-map-pin"></i></div><div><span class="cc-label">Location</span><span class="cc-val">Mississauga, Ontario, Canada</span></div></div>
+      </div>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="fg"><label for="fname">Your Name</label><input type="text" id="fname" name="name" placeholder="Jane Smith" required /></div>
+          <div class="fg"><label for="femail">Email Address</label><input type="email" id="femail" name="email" placeholder="jane@company.com" required /></div>
+        </div>
+        <div class="fg"><label for="fsubject">Subject</label><input type="text" id="fsubject" name="subject" placeholder="Job Opportunity / Project Inquiry" /></div>
+        <div class="fg"><label for="fmsg">Message</label><textarea id="fmsg" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-full"><i class="ph ph-paper-plane-tilt"></i> Send Message</button>
+        <p class="form-note">Or email directly at <a href="/cdn-cgi/l/email-protection#3d5c555058591350485f5c4f5c561358535a7d5a505c5451135e5250"><span class="__cf_email__" data-cfemail="5e3f36333b3a70332b3c3f2c3f35703b30391e39333f3732703d3133">[email&#160;protected]</span></a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="f-logo">AM<span class="dot">.</span></span><p>I&amp;C Automation &amp; Control Systems Engineer · EIT<br />Currently at AECOM · Building smarter systems, one relay at a time.</p></div>
+      <nav class="footer-nav"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="/cdn-cgi/l/email-protection#83e2ebeee6e7adeef6e1e2f1e2e8ade6ede4c3e4eee2eaefade0ecee" aria-label="Email"><i class="ph ph-envelope"></i></a>
+        <a href="tel:6473953551" aria-label="Phone"><i class="ph ph-phone"></i>
