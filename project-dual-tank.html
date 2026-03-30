@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Allen-Bradley CompactLogix and FactoryTalk View case study with AOI-based architecture, pump alternation logic, maintenance mode, valve control, and HMI operation." />
+  <title>Dual-Tank Pump Control System | Ahmed Mubarak</title>
+  <meta name="theme-color" content="#090b10" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <nav id="navbar" aria-label="Primary">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Ahmed Mubarak home">
+          <span class="logo-mark">AM</span>
+          <span class="logo-copy"><strong>Ahmed Mubarak</strong><span>Controls • Design • Delivery</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <a class="btn btn-secondary desktop-only" href="resume.pdf" target="_blank" rel="noopener"><i class="ph ph-file-pdf"></i> Resume</a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Open Resume</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="project-hero">
+        <div class="container">
+          <a class="back-link" href="index.html#projects"><i class="ph ph-arrow-left"></i> Back to projects</a>
+          <div class="project-hero-grid">
+            <div class="project-hero-copy reveal">
+              <div class="project-badge-row"><span class="badge gold">PLC architecture · operator control</span><span class="badge soft">Ahmed Mubarak project case study</span></div>
+              <h1 class="project-title">Dual-Tank Pump Control System</h1>
+              <p class="project-subtitle">A structured control-logic project showing how you organize a system, not just how you make it run once. This page helps showcase code architecture, maintainability, and operator-focused control design.</p>
+              <div class="tag-row" style="margin-top:18px;"><span class="tag">CompactLogix</span><span class="tag">Studio 5000</span><span class="tag">FactoryTalk View</span><span class="tag">AOIs</span><span class="tag">Pump Alternation</span><span class="tag">Maintenance Mode</span></div>
+            </div>
+            <div class="hero-side-card reveal">
+              <h3>Project snapshot</h3>
+              <div class="fact-list"><div class="fact-row"><span>PLC</span><strong>Allen-Bradley CompactLogix</strong></div><div class="fact-row"><span>HMI</span><strong>FactoryTalk View</strong></div><div class="fact-row"><span>Architecture</span><strong>AOI-based</strong></div><div class="fact-row"><span>Process</span><strong>Dual-tank pump control</strong></div><div class="fact-row"><span>Signal</span><strong>Structured logic quality</strong></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container project-layout">
+          <div class="project-main">
+            
+            
+<div class="proj-card reveal">
+  <h2>Project gallery</h2>
+  <div class="gallery-2">
+    <a class="figure-card" href="GetAttachmentThumbnail.png" data-lightbox data-lightbox-caption="Dual-tank project image 1"><img src="GetAttachmentThumbnail.png" alt="Dual-tank project image 1" loading="lazy" /></a>
+    <a class="figure-card" href="GetAttachmentThumbnail 1.png" data-lightbox data-lightbox-caption="Dual-tank project image 2"><img src="GetAttachmentThumbnail 1.png" alt="Dual-tank project image 2" loading="lazy" /></a>
+  </div>
+  <div class="gallery-2">
+    <a class="figure-card" href="GetAttachmentThumbnail 2.png" data-lightbox data-lightbox-caption="Dual-tank project image 3"><img src="GetAttachmentThumbnail 2.png" alt="Dual-tank project image 3" loading="lazy" /></a>
+    <a class="figure-card" href="GetAttachmentThumbnail 3.png" data-lightbox data-lightbox-caption="Dual-tank project image 4"><img src="GetAttachmentThumbnail 3.png" alt="Dual-tank project image 4" loading="lazy" /></a>
+  </div>
+  <div class="gallery-2">
+    <a class="figure-card" href="GetAttachmentThumbnail 4.png" data-lightbox data-lightbox-caption="Dual-tank project image 5"><img src="GetAttachmentThumbnail 4.png" alt="Dual-tank project image 5" loading="lazy" /></a>
+    <a class="figure-card" href="88.png" data-lightbox data-lightbox-caption="Dual-tank project image 6"><img src="88.png" alt="Dual-tank project image 6" loading="lazy" /></a>
+  </div>
+  <div class="gallery">
+    <a class="figure-card" href="99.png" data-lightbox data-lightbox-caption="Dual-tank project image 7"><img src="99.png" alt="Dual-tank project image 7" loading="lazy" /></a>
+  </div>
+</div>
+
+            <div class="proj-card reveal">
+              <h2>What was delivered</h2>
+              <ul class="bullet-list"><li>Implemented a dual-tank control strategy with pumps and valves coordinated through reusable logic structure.</li><li>Applied alternation logic, maintenance behaviour, and operator-facing HMI status/control concepts to make the system easier to manage and support.</li><li>Used the project to show control architecture quality, not just point-to-point logic.</li></ul>
+            </div>
+            <div class="proj-card reveal">
+              <h2>Why this project matters</h2>
+              <ul class="bullet-list"><li>This project is especially useful in technical interviews because it gives you a clean example to discuss architecture, sequencing, state handling, and maintainability.</li><li>It supports your positioning as someone who thinks about logic structure and supportability, not only raw implementation.</li><li>For control-system roles, this kind of structured project can be more impressive than a visually flashy one.</li></ul>
+            </div>
+            <div class="proj-card reveal">
+              <h2>How I would position this work professionally</h2>
+              <p class="lead">This page is written to sound more like a real engineering case study and less like a school assignment. That matters because the goal is not only to show what was built, but also to show <strong>how you think, how you execute, and how you create confidence</strong>.</p>
+              <div class="impact"><strong>Best signal:</strong> This project strengthens your brand as someone who can own technical scope, communicate clearly, and move work toward an operational result.</div>
+            </div>
+            <div class="proj-card reveal">
+              <div class="project-nav">
+                <a class="btn btn-secondary" href="index.html#projects"><i class="ph ph-squares-four"></i> All projects</a>
+                <a class="btn btn-primary" href="index.html#contact">Contact Ahmed <i class="ph ph-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <aside class="sidebar-stack reveal">
+            <div class="side-card">
+              <h3>What it signals</h3>
+              <ul class="bullet-list"><li>Structured logic mindset.</li><li>Operator and maintenance awareness.</li><li>Strong technical example for interviews and portfolio reviews.</li></ul>
+            </div>
+            <div class="side-card">
+              <h3>Core technologies</h3>
+              <div class="tag-row"><span class="tag">CompactLogix</span><span class="tag">Studio 5000</span><span class="tag">FactoryTalk View</span><span class="tag">AOIs</span><span class="tag">Pump Alternation</span><span class="tag">Maintenance Mode</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-mark">AM</span>
+        <div class="footer-brand-copy">
+          <strong>Ahmed Mubarak</strong>
+          <span>Electrical, Instrumentation &amp; Controls Engineer</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:ahmed.mubarak.eng@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+        <a href="tel:6473953551" aria-label="Phone"><i class="ph ph-phone"></i></a>
+        <a href="resume.pdf" target="_blank" rel="noopener" aria-label="Resume"><i class="ph ph-file-pdf"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> Ahmed Mubarak. Built to communicate technical credibility, delivery ownership, and leadership range.</div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+  </div>
+</body>
+</html>
