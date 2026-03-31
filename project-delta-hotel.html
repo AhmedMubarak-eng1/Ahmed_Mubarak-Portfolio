@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delta (Marriott) Ottawa Hotel – Dual Air Compressor BAS | Ahmed Mubarak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .proj-hero {
+      padding-top: var(--nav-h);
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .proj-hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(135deg, #0b0d12 0%, #161a23 100%);
+    }
+    .proj-hero-orb {
+      position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,157,72,0.13), transparent 70%);
+      top: -220px; right: -120px; pointer-events: none;
+    }
+    .proj-hero-orb2 {
+      position: absolute; width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,157,72,0.06), transparent 70%);
+      bottom: -100px; left: 5%; pointer-events: none;
+    }
+    .proj-hero-content { position: relative; z-index: 1; padding: 64px 0; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--gold); font-size: .85rem; font-weight: 500;
+      margin-bottom: 32px; transition: gap .15s;
+    }
+    .back-link:hover { gap: 12px; }
+    .proj-cat-badge {
+      display: inline-block; background: var(--gold-dim);
+      border: 1px solid var(--bord-g); color: var(--gold);
+      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 18px;
+    }
+    .proj-title {
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700;
+      margin-bottom: 16px; max-width: 800px; line-height: 1.15;
+    }
+    .proj-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .proj-meta span {
+      font-size: .82rem; color: var(--text-3);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .icon-hero {
+      font-size: 6rem; color: var(--gold); opacity: .15;
+      position: absolute; right: 10%; top: 50%;
+      transform: translateY(-50%); pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════
+       BODY
+    ══════════════════════════════════════ */
+    .proj-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 72px 32px 80px;
+    }
+
+    .proj-section { margin-bottom: 52px; }
+    .proj-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .proj-section h2::before {
+      content: ''; flex: 1; max-width: 32px; height: 1px; background: var(--gold);
+    }
+    .proj-section p { font-size: 1rem; color: var(--text-2); line-height: 1.9; }
+    .proj-section p + p { margin-top: 16px; }
+    .proj-section ul { display: flex; flex-direction: column; gap: 12px; }
+    .proj-section ul li {
+      font-size: .95rem; color: var(--text-2);
+      line-height: 1.8; padding-left: 22px; position: relative;
+    }
+    .proj-section ul li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--gold); font-size: .7rem; top: 5px;
+    }
+    .proj-section ul li strong { color: var(--text); font-weight: 500; }
+
+    /* ══════════════════════════════════════
+       STATS
+    ══════════════════════════════════════ */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-bottom: 56px;
+    }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 22px; text-align: center;
+      transition: border-color .2s, transform .2s;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .stat-card:hover { border-color: var(--bord-g); transform: translateY(-3px); }
+    .stat-card .stat-icon {
+      font-size: 1.6rem; color: var(--gold);
+      background: var(--gold-dim); border: 1px solid var(--bord-g);
+      width: 48px; height: 48px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 4px;
+    }
+    .stat-card .stat-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: .9rem; font-weight: 600;
+      color: var(--text); line-height: 1.3;
+    }
+    .stat-card .stat-lbl {
+      font-size: .78rem; color: var(--text-3);
+      line-height: 1.65; letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* ══════════════════════════════════════
+       IMPACT BOX
+    ══════════════════════════════════════ */
+    .impact-box {
+      background: var(--bg-card); border: 1px solid var(--bord-g);
+      border-radius: 12px; padding: 28px 32px;
+    }
+    .impact-box p { font-size: .95rem; color: var(--text-2); line-height: 1.9; }
+    .impact-box p + p { margin-top: 14px; }
+
+    /* ══════════════════════════════════════
+       CERTIFICATIONS
+    ══════════════════════════════════════ */
+    .cert-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+    .cert-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(196,157,72,.07); border: 1px solid var(--bord-g);
+      padding: 8px 16px; border-radius: 6px;
+      font-size: .8rem; color: var(--gold); font-weight: 500;
+    }
+    .cert-badge i { font-size: 1rem; }
+
+    /* ══════════════════════════════════════
+       IMAGE SYSTEM
+       object-fit: contain  =  never crops
+    ══════════════════════════════════════ */
+
+    /* Full-width single image */
+    .img-full {
+      width: 100%;
+      background: #0d1018;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      cursor: zoom-in;
+      transition: border-color .2s;
+    }
+    .img-full:hover { border-color: var(--bord-g); }
+    .img-full img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      background: #0d1018;
+    }
+
+    /* Two images side by side */
+    .img-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .img-card {
+      background: #0d1018;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: border-color .2s;
+    }
+    .img-card:hover { border-color: var(--bord-g); }
+    .img-card img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      background: #0d1018;
+    }
+
+    /* Image caption */
+    .img-caption {
+      font-size: .74rem;
+      color: var(--text-3);
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .img-caption span {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 16px;
+      display: inline-block;
+      line-height: 1.6;
+    }
+
+    /* Image LEFT, text RIGHT layout */
+    .img-text-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 52px;
+    }
+    .img-text-row.flip {
+      direction: rtl;
+    }
+    .img-text-row.flip > * { direction: ltr; }
+
+    .img-side {
+      background: #0d1018;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: border-color .2s;
+    }
+    .img-side:hover { border-color: var(--bord-g); }
+    .img-side img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      background: #0d1018;
+    }
+
+    .text-side h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .13em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .text-side h3::before {
+      content: ''; width: 24px; height: 1px; background: var(--gold);
+    }
+    .text-side p {
+      font-size: .93rem; color: var(--text-2); line-height: 1.88;
+    }
+
+    /* ══════════════════════════════════════
+       TAGS & NAV
+    ══════════════════════════════════════ */
+    .proj-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      padding-top: 32px; border-top: 1px solid var(--border); margin-top: 48px;
+    }
+    .proj-tags span {
+      background: rgba(196,157,72,.07); border: 1px solid rgba(196,157,72,.2);
+      color: var(--text-2); font-size: .78rem; padding: 5px 14px; border-radius: 4px;
+    }
+    .proj-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 32px 0; border-top: 1px solid var(--border); margin-top: 16px;
+    }
+
+    /* ══════════════════════════════════════
+       LIGHTBOX
+    ══════════════════════════════════════ */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(11,13,18,.97);
+      backdrop-filter: blur(20px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-img {
+      max-width: 90vw; max-height: 86vh;
+      border-radius: 8px;
+      box-shadow: 0 40px 100px rgba(0,0,0,.7);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: fixed; top: 20px; right: 24px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      color: var(--text-2); width: 42px; height: 42px;
+      border-radius: 8px; cursor: pointer; font-size: 1.15rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .15s, color .15s;
+    }
+    .lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-caption {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      font-size: .78rem; color: var(--text-3);
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 6px 18px; border-radius: 20px; white-space: nowrap; max-width: 80vw;
+      text-align: center; white-space: normal;
+    }
+    .lightbox-nav {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      background: var(--bg-card); border: 1px solid var(--border);
+      color: var(--text-2); width: 46px; height: 46px;
+      border-radius: 8px; cursor: pointer; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .15s;
+    }
+    .lightbox-nav:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 700px) {
+      .proj-body { padding: 44px 18px 64px; }
+      .proj-nav { flex-direction: column; gap: 16px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .img-pair { grid-template-columns: 1fr; }
+      .img-text-row { grid-template-columns: 1fr; }
+      .img-text-row.flip { direction: ltr; }
+      .lightbox-nav { display: none; }
+    }
+    @media (max-width: 480px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="resume.pdf" class="btn btn-nav" target="_blank" rel="noopener"><i class="ph ph-file-text"></i> Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#experience" class="mobile-link">Experience</a>
+    <a href="index.html#projects" class="mobile-link">Projects</a>
+    <a href="index.html#skills" class="mobile-link">Skills</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <div class="proj-hero-orb"></div>
+  <div class="proj-hero-orb2"></div>
+  <i class="ph ph-buildings-bold icon-hero"></i>
+  <div class="container proj-hero-content">
+    <a href="index.html#projects" class="back-link"><i class="ph ph-arrow-left"></i> Back to All Projects</a>
+    <div class="proj-cat-badge">Building Automation · Capstone</div>
+    <h1 class="proj-title">Delta (Marriott) Ottawa Hotel – Dual Air Compressor BAS</h1>
+    <div class="proj-meta">
+      <span><i class="ph ph-buildings"></i> Midwest Services Canada</span>
+      <span><i class="ph ph-calendar"></i> Jan – March 2025</span>
+      <span><i class="ph ph-map-pin"></i> Ottawa, Ontario</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BODY ══ -->
+<div class="proj-body">
+
+  <!-- 1. OVERVIEW -->
+  <div class="proj-section">
+    <h2>Overview</h2>
+    <p>
+      This project represents one of the most complete engineering deliverables of my career to date —
+      a full end-to-end Building Automation System (BAS) for the dual air compressor infrastructure
+      at the <em>Delta Ottawa Hotel</em>, a Marriott-brand property in the heart of Canada's capital.
+      From initial requirements gathering and electrical design through hardware procurement,
+      panel fabrication, on-site commissioning, and final ESA/ESAFE certification, I owned
+      every phase of this project while working part-time at Midwest Services Canada.
+    </p>
+    <p>
+      The hotel's compressed air system is a critical utility — powering pneumatic door actuators,
+      HVAC dampers, and maintenance tooling across multiple floors. The legacy system lacked any
+      intelligent control, leaving maintenance staff with no visibility into compressor health,
+      runtime hours, or pressure faults. This project replaced that with a modern, fully automated
+      solution built around a <strong>Siemens LOGO! PLC</strong> and a custom CSA-compliant panel.
+    </p>
+  </div>
+
+  <!-- 2. BENEFIT CARDS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-clock-countdown"></i></div>
+      <div class="stat-val">Extended Lifespan</div>
+      <div class="stat-lbl">Runtime hour metering shifts maintenance from fixed calendar intervals to actual operating hours — preventing over-servicing and premature wear</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-arrow-down"></i></div>
+      <div class="stat-val">Reduced Downtime</div>
+      <div class="stat-lbl">Automatic lead/lag sequencing balances load between both compressors, eliminating single-unit overload and reducing unplanned failures</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="ph ph-bell-ringing"></i></div>
+      <div class="stat-val">Leak Detection &amp; Alerts</div>
+      <div class="stat-lbl">Continuous pressure monitoring detects leaks instantly and alerts staff. The system automatically boosts output to maintain pressure until the issue is resolved</div>
+    </div>
+  </div>
+
+  <!-- 3. IMAGE — Full panel + laptop (scene setter) -->
+  <div class="img-full" data-idx="0">
+    <img src="Img_1.jpg"
+         alt="Control panel open during on-site commissioning — laptop displaying LOGO! Soft Comfort ladder logic"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>On-site commissioning at Delta Ottawa Hotel — control panel open with LOGO! Soft Comfort program visible on laptop</span>
+  </p>
+
+  <!-- 4. DESIGN & PANEL BUILD + panel interior image -->
+  <div class="proj-section">
+    <h2>System Design &amp; Panel Build</h2>
+    <p>
+      The project began with a complete electrical design package — power distribution, motor
+      protection, control circuits, and protection coordination schematics — all produced in
+      <strong>AutoCAD Electrical</strong> to fabrication-ready standards. Every component was
+      specified, procured, and assembled into a <strong>CSA-compliant custom control panel</strong>
+      built to Ontario Electrical Code requirements.
+    </p>
+    <p>
+      The panel houses a <strong>Weidmüller PROeco 24VDC SMPS</strong>, <strong>Siemens LOGO! PLC</strong>,
+      four <strong>Siemens Sirius motor starters</strong>, a MCB for incoming protection,
+      and a full DIN-rail terminal block array for clean field wiring terminations.
+    </p>
+  </div>
+
+  <!-- Panel interior photo — full width -->
+  <div class="img-full" data-idx="1">
+    <img src="Img_2.jpg"
+         alt="Panel interior — Weidmüller 24VDC SMPS, Siemens LOGO! PLC, Sirius motor starters, terminal blocks on DIN rail"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>Panel interior — Weidmüller SMPS, Siemens LOGO! PLC, Sirius motor starters, and terminal block arrays</span>
+  </p>
+
+  <!-- 5. PLC PROGRAMMING — image left, text right -->
+  <div class="img-text-row">
+    <div class="img-side" data-idx="2">
+      <img src="Img_3.jpg"
+           alt="Full open control enclosure showing door-mounted operator buttons and wired panel interior"
+           loading="lazy" />
+    </div>
+    <div class="text-side">
+      <h3>PLC Logic &amp; Automation</h3>
+      <p>
+        The <strong>Siemens LOGO! PLC</strong> was programmed for automatic lead/lag compressor
+        sequencing — rotating the lead unit to balance wear between both machines. Manual override
+        allows hotel staff to force either compressor on or off for maintenance without disrupting
+        the other. Independent runtime hour counters track actual operating time per unit,
+        triggering preventive maintenance alerts at configurable hour thresholds.
+      </p>
+      <p style="margin-top:12px;">
+        Alarm logic monitors system pressure continuously — flagging low pressure conditions,
+        abnormal runtime patterns, and compressor faults, with automated notifications delivered
+        directly to hotel engineering staff.
+      </p>
+    </div>
+  </div>
+
+  <!-- 6. OPERATOR INTERFACE — text left, image right -->
+  <div class="img-text-row flip">
+    <div class="img-side" data-idx="3">
+      <img src="Img_4.jpg"
+           alt="Panel door close-up — labelled pushbuttons, selector switches, and indicator lights for Compressor 1 and 2"
+           loading="lazy" />
+    </div>
+    <div class="text-side">
+      <h3>Operator Interface</h3>
+      <p>
+        The panel door was designed as a clean, intuitive operator interface.
+        Three-colour indicator lights (<strong>ON / WARNING / FAULT</strong>) give
+        instant status for each compressor. <strong>MAN / OFF / AUTO</strong> selector
+        switches allow mode changes without opening the panel. Dual emergency-stop
+        mushroom heads provide independent safe-stop capability for each machine.
+        All devices are clearly labelled and wired to numbered terminal blocks inside.
+      </p>
+    </div>
+  </div>
+
+  <!-- 7. INSTALLED PANEL — full width -->
+  <div class="img-full" data-idx="4">
+    <img src="Img_5.jpg"
+         alt="Finished operator panel installed at Delta Ottawa Hotel — Power ON indicator lit, Compressor status lights, selectors, and E-STOP buttons"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>Finished operator panel — fully installed and live at the Delta Ottawa Hotel mechanical room</span>
+  </p>
+
+  <!-- 8. COMMISSIONING SECTION -->
+  <div class="proj-section">
+    <h2>On-Site Commissioning</h2>
+    <p>
+      After panel fabrication was complete, I travelled to the Delta Ottawa Hotel to commission
+      the system on-site. All field wiring was verified for continuity and correct termination,
+      every control sequence was tested under live conditions, and both compressors were run
+      through automatic and manual modes to confirm correct operation.
+    </p>
+    <p>
+      Commissioning included pressure sensor calibration, alarm threshold verification, and a
+      full fault simulation to confirm every warning and fault condition triggered correctly.
+      Following commissioning, I delivered hands-on training to hotel engineering staff —
+      covering daily operation, fault response procedures, and how to read the LOGO! display
+      for runtime status and system health.
+    </p>
+  </div>
+
+  <!-- Engineer at panel photo -->
+  <div class="img-full" data-idx="5">
+    <img src="Img_6.jpg"
+         alt="Engineer commissioning the control panel on-site at Delta Ottawa Hotel — laptop connected via Ethernet to LOGO! PLC"
+         loading="lazy" />
+  </div>
+  <p class="img-caption">
+    <span>On-site commissioning — laptop connected to the LOGO! PLC via Ethernet for live program monitoring</span>
+  </p>
+
+  <!-- 9. RUNTIME TRACKING -->
+  <div class="proj-section">
+    <h2>Runtime Hour Tracking</h2>
+    <p>
+      One of the most valuable features of the system is the independent runtime hour counter
+      for each compressor. Rather than calendar-based service intervals, the LOGO! PLC tracks
+      actual operating hours — alerting engineering staff when either unit approaches its next
+      maintenance milestone. This prevents both under-servicing (which causes failures) and
+      over-servicing (which wastes budget). The images below show both counters live shortly
+      after initial commissioning.
+    </p>
+  </div>
+
+  <!-- C1 + C2 runtime pair -->
+  <div class="img-pair">
+    <div class="img-card" data-idx="6">
+      <img src="Img_7.jpg"
+           alt="Siemens LOGO! PLC display — Compressor 1 runtime counter C1 at 0h15m"
+           loading="lazy" />
+    </div>
+    <div class="img-card" data-idx="7">
+      <img src="Img_8.jpg"
+           alt="Siemens LOGO! PLC display — Compressor 2 runtime counter C2 at 0h15m"
+           loading="lazy" />
+    </div>
+  </div>
+  <p class="img-caption">
+    <span>LOGO! PLC display — independent runtime counters for Compressor 1 (C1) and Compressor 2 (C2), captured at initial commissioning</span>
+  </p>
+
+  <!-- 10. FULL SCOPE OF WORK -->
+  <div class="proj-section">
+    <h2>Full Scope of Work</h2>
+    <ul>
+      <li>Designed the <strong>full system architecture</strong> — power distribution, control circuits, motor protection, and coordination schematics in <strong>AutoCAD Electrical</strong> to fabrication-ready standards</li>
+      <li>Programmed a <strong>Siemens LOGO! PLC (6ED1052-1MD08-0BA2)</strong> for automatic lead/lag sequencing, manual override, runtime hour metering, and maintenance scheduling tied to actual operating hours</li>
+      <li>Integrated <strong>advanced alarm handling</strong> — pressure drop detection, low pressure warnings, abnormal runtime flags, and fault conditions — with automated alerts to hotel engineering staff</li>
+      <li>Automated <strong>daily engineer reports</strong> providing real-time visibility of system health, current pressure, runtime hours, and upcoming maintenance milestones</li>
+      <li>Designed and built a <strong>CSA-compliant custom control panel</strong> — Weidmüller 24VDC SMPS, Siemens Sirius motor starters, terminal block arrays, and field wiring to ESA standards</li>
+      <li>Built the <strong>operator door interface</strong>: ON / WARNING / FAULT indicators per compressor, MAN / OFF / AUTO selectors, dual E-STOP mushroom heads, and a global POWER ON indicator</li>
+      <li>Managed full <strong>supplier coordination and procurement</strong> — all panel hardware and electrical components sourced to spec within project budget</li>
+      <li><strong>Commissioned on-site</strong> at the Delta Ottawa Hotel — verified field wiring, tested all sequences live, and trained hotel engineering staff on operation and maintenance</li>
+      <li>Achieved <strong>ESA/ESAFE certification</strong> — full installation passed Ontario electrical safety inspection to commercial building code</li>
+    </ul>
+  </div>
+
+  <!-- 11. CERTIFICATIONS -->
+  <div class="proj-section">
+    <h2>Compliance &amp; Certifications</h2>
+    <p>The installation was engineered and built to Ontario commercial electrical standards, achieving formal certification before client handover.</p>
+    <div class="cert-row">
+      <div class="cert-badge"><i class="ph ph-seal-check"></i> ESA Certified</div>
+      <div class="cert-badge"><i class="ph ph-seal-check"></i> ESAFE Compliant</div>
+      <div class="cert-badge"><i class="ph ph-seal-check"></i> CSA Panel Build</div>
+      <div class="cert-badge"><i class="ph ph-seal-check"></i> Ontario Electrical Code</div>
+    </div>
+  </div>
+
+  <!-- 12. RESULTS & IMPACT -->
+  <div class="proj-section">
+    <h2>Results &amp; Impact</h2>
+    <div class="impact-box">
+      <p>
+        The Delta Ottawa Hotel received a fully certified, production-grade automation system
+        that transformed a completely manual compressor room into an intelligent, self-monitoring
+        utility. Unplanned downtime was significantly reduced through proactive pressure monitoring
+        and fault alerting. Compressor service intervals were extended by shifting from
+        calendar-based maintenance to actual runtime-hour tracking — saving unnecessary service
+        costs while ensuring no unit is ever run past its due date.
+      </p>
+      <p>
+        The client received a complete documentation handover package — AutoCAD electrical
+        drawings, PLC logic descriptions, I/O lists, and a maintenance procedures manual —
+        ensuring the system can be confidently operated and supported for years without reliance
+        on the original engineer.
+      </p>
+    </div>
+  </div>
+
+  <!-- 13. TAGS -->
+  <div class="proj-tags">
+    <span>Siemens LOGO! PLC</span>
+    <span>AutoCAD Electrical</span>
+    <span>Panel Design &amp; Build</span>
+    <span>CSA Compliance</span>
+    <span>ESA/ESAFE Certified</span>
+    <span>Commissioning</span>
+    <span>Operator Training</span>
+    <span>Building Automation</span>
+    <span>Alarm Handling</span>
+    <span>Runtime Hour Metering</span>
+    <span>Preventive Maintenance</span>
+    <span>Lead/Lag Sequencing</span>
+    <span>Daily Automated Reports</span>
+    <span>600V Control Panels</span>
+  </div>
+
+  <!-- 14. BOTTOM NAV -->
+  <div class="proj-nav">
+    <a href="index.html#projects" class="btn btn-ghost"><i class="ph ph-arrow-left"></i> All Projects</a>
+    <a href="index.html#contact" class="btn btn-primary">Get In Touch <i class="ph ph-arrow-right"></i></a>
+  </div>
+
+</div><!-- /proj-body -->
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lbClose" aria-label="Close"><i class="ph ph-x"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous"><i class="ph ph-arrow-left"></i></button>
+  <img class="lightbox-img" id="lbImg" src="" alt="" />
+  <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next"><i class="ph ph-arrow-right"></i></button>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="f-logo">AM<span class="dot">.</span></span>
+        <p>I&amp;C Automation &amp; Control Systems Engineer · EIT<br />Currently at AECOM.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="/cdn-cgi/l/email-protection#33525b5e56571d5e4651524152581d565d5473545e525a5f1d505c5e" aria-label="Email"><i class="ph ph-envelope"></i></a>
+        <a href="resume.pdf" aria-label="Resume" target="_blank"><i class="ph ph-file-text"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Ahmed Mubarak.</span>
+      <span>Engineered with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+<script>
+(function () {
+  const clickables = document.querySelectorAll('[data-idx]');
+  const images = [];
+  clickables.forEach(function (el) {
+    const img = el.querySelector('img');
+    const captionEl = el.closest('.img-full, .img-pair, .img-text-row')
+                       ?.nextElementSibling?.querySelector('span');
+    images.push({
+      src: img ? img.src : '',
+      alt: img ? img.alt : '',
+      caption: captionEl ? captionEl.textContent.trim() : (img ? img.alt : '')
+    });
+  });
+
+  const lb      = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lbImg');
+  const lbCap   = document.getElementById('lbCaption');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev  = document.getElementById('lbPrev');
+  const lbNext  = document.getElementById('lbNext');
+  let current   = 0;
+
+  function openLb(idx) {
+    current = idx;
+    lbImg.src = images[idx].src;
+    lbImg.alt = images[idx].alt;
+    lbCap.textContent = images[idx].caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+  function prev() { openLb((current - 1 + clickables.length) % clickables.length); }
+  function next() { openLb((current + 1) % clickables.length); }
+
+  clickables.forEach(function (el, i) {
+    el.addEventListener('click', function () { openLb(i); });
+  });
+  lbClose.addEventListener('click', closeLb);
+  lbPrev.addEventListener('click', prev);
+  lbNext.addEventListener('click', next);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('active')) return;
+   
