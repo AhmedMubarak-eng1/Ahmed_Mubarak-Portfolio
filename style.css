@@ -133,3 +133,111 @@ footer { background:var(--bg-alt); border-top:1px solid var(--border); padding:4
   .footer-bottom { flex-direction:column; text-align:center; }
   section { padding: 64px 0; }
 }
+
+/* ── 2026 CONTENT & ACCESSIBILITY REFINEMENTS ── */
+html { color-scheme: dark; }
+section[id] { scroll-margin-top: calc(var(--nav-h) + 18px); }
+::selection { background: rgba(196,157,72,.35); color: var(--text); }
+
+button { color: inherit; }
+button.mobile-link {
+  width: 100%; background: transparent; font-family: inherit; cursor: pointer;
+}
+.resume-trigger { justify-content: center; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold-l);
+  outline-offset: 3px;
+}
+
+.footer-social a,
+.footer-social button {
+  width:38px; height:38px; background:var(--bg-card); border:1px solid var(--border);
+  border-radius:8px; display:flex; align-items:center; justify-content:center;
+  color:var(--text-3); font-size:1.05rem; transition:all 0.15s; cursor:pointer;
+}
+.footer-social button { font-family:inherit; }
+.footer-social a:hover,
+.footer-social button:hover {
+  border-color:var(--gold); color:var(--gold); transform:translateY(-3px);
+}
+
+/* ── ROLE-BASED RESUME CHOOSER ── */
+.resume-dialog {
+  width: min(980px, calc(100% - 32px));
+  max-height: min(820px, calc(100vh - 32px));
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--bord-g);
+  border-radius: 20px;
+  background: var(--bg-alt);
+  color: var(--text);
+  box-shadow: 0 30px 100px rgba(0,0,0,.72), 0 0 50px rgba(196,157,72,.12);
+  overflow: auto;
+}
+body.modal-open { overflow:hidden; }
+.resume-dialog::backdrop {
+  background: rgba(4,6,10,.82);
+  backdrop-filter: blur(8px);
+}
+.resume-dialog-shell { padding: 34px; }
+.resume-dialog-head {
+  display:flex; align-items:flex-start; justify-content:space-between; gap:24px;
+  padding-bottom:24px; margin-bottom:24px; border-bottom:1px solid var(--border);
+}
+.resume-dialog-head h2 { font-size:clamp(1.85rem,4vw,2.55rem); margin:4px 0 6px; }
+.resume-dialog-head p { color:var(--text-2); max-width:620px; }
+.resume-kicker {
+  color:var(--gold); font-size:.72rem; font-weight:600; letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.resume-close {
+  width:42px; height:42px; flex:0 0 auto; display:grid; place-items:center;
+  border:1px solid var(--border); border-radius:10px; background:var(--bg-card);
+  color:var(--text-2); cursor:pointer; font-size:1.1rem; transition:.18s ease;
+}
+.resume-close:hover { color:var(--gold); border-color:var(--bord-g); }
+.resume-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.resume-option {
+  display:flex; flex-direction:column; min-width:0; padding:26px;
+  background:linear-gradient(145deg,rgba(196,157,72,.055),var(--bg-card) 45%);
+  border:1px solid var(--border); border-radius:15px;
+}
+.resume-option:hover { border-color:var(--bord-g); }
+.resume-option-icon {
+  width:46px; height:46px; display:grid; place-items:center; margin-bottom:18px;
+  color:var(--gold); font-size:1.25rem; background:var(--gold-dim);
+  border:1px solid var(--bord-g); border-radius:11px;
+}
+.resume-option-label {
+  color:var(--gold); font-size:.68rem; font-weight:600; letter-spacing:.12em;
+  text-transform:uppercase; margin-bottom:6px;
+}
+.resume-option h3 { font-family:'Outfit',sans-serif; font-size:1.05rem; margin-bottom:10px; }
+.resume-option > p { color:var(--text-2); font-size:.88rem; line-height:1.7; margin-bottom:16px; }
+.resume-option ul { display:grid; gap:9px; margin-bottom:22px; }
+.resume-option li {
+  position:relative; padding-left:18px; color:var(--text-2); font-size:.8rem; line-height:1.55;
+}
+.resume-option li::before { content:'✓'; position:absolute; left:0; color:var(--gold); }
+.resume-option-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; }
+.resume-option-actions .btn { flex:1; justify-content:center; padding-inline:14px; }
+
+@media (max-width:760px) {
+  .resume-dialog-shell { padding:22px; }
+  .resume-options { grid-template-columns:1fr; }
+  .resume-dialog-head { gap:14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior:auto !important;
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .reveal { opacity:1; transform:none; }
+}

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ahmed Mubarak – Electrical, Instrumentation & Controls Engineer at AECOM. PLC, SCADA, HMI, electrical design across energy, nuclear, defense, water, and critical infrastructure." />
-  <title>Ahmed Mubarak | I&C Automation & Control Systems Engineer</title>
+  <meta name="description" content="Ahmed Mubarak is an Instrumentation & Controls Engineer and project-delivery professional with experience in PLC, SCADA/HMI, electrical design, FAT/SAT, commissioning, and multidisciplinary engineering coordination." />
+  <title>Ahmed Mubarak | I&amp;C, Automation &amp; Project Delivery Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Cpath d='M14 45 27 17h5l13 28h-7l-3-7H24l-3 7Zm13-13h6l-3-8Z' fill='%23c49d48'/%3E%3Cpath d='M47 17h5v28h-5z' fill='%23f1f2f4'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -47,7 +48,7 @@
     /* Portrait */
     .hero-visual { position:relative; z-index:1; flex-shrink:0; width:360px; height:460px; display:flex; align-items:center; justify-content:center; }
     .portrait-frame { width:290px; height:370px; border-radius:18px; overflow:hidden; border:1px solid var(--bord-g); background:var(--bg-card); box-shadow:0 4px 28px rgba(0,0,0,.4), 0 0 36px rgba(196,157,72,.15); }
-    .portrait-frame img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .portrait-frame img { width:100%; height:100%; object-fit:cover; object-position:center 24%; }
     .float-pill { position:absolute; background:var(--bg-card); border:1px solid var(--bord-g); color:var(--gold); font-size:0.75rem; font-weight:600; padding:7px 14px; border-radius:100px; display:flex; align-items:center; gap:6px; animation:floatY 4s ease-in-out infinite; white-space:nowrap; box-shadow:0 4px 16px rgba(0,0,0,.3); }
     .p1{top:8%;left:-55px;animation-delay:0s} .p2{top:35%;right:-50px;animation-delay:1s} .p3{bottom:25%;left:-60px;animation-delay:2s} .p4{bottom:8%;right:-30px;animation-delay:1.5s}
     @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
@@ -205,9 +206,9 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="resume.pdf" class="btn btn-nav" target="_blank" rel="noopener">
-      <i class="ph ph-file-text"></i> Resume
-    </a>
+    <button type="button" class="btn btn-nav resume-trigger" data-resume-open>
+      <i class="ph ph-file-text"></i> Choose Resume
+    </button>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -218,7 +219,7 @@
     <a href="#projects" class="mobile-link">Projects</a>
     <a href="#skills" class="mobile-link">Skills</a>
     <a href="#contact" class="mobile-link">Contact</a>
-    <a href="resume.pdf" class="mobile-link resume-mobile" target="_blank">Download Resume</a>
+    <button type="button" class="mobile-link resume-mobile resume-trigger" data-resume-open>Choose Resume</button>
   </div>
 </nav>
 
@@ -235,35 +236,31 @@
     </div>
     <h1 class="hero-name reveal">Ahmed<br /><em>Mubarak</em></h1>
     <p class="hero-title-line reveal">
-      I&amp;C Automation &amp; Control Systems Engineer
+      Instrumentation &amp; Controls Engineer
+      <span class="tag-eit">EIT</span>
       <span class="sep">·</span>
+      Project Engineering &amp; Coordination
     </p>
-   <p class="hero-desc reveal">
-  Automation &amp; Control Systems Engineer </strong> delivering
-  <strong>PLC, SCADA, HMI, and electrical control solutions</strong> across
-  <strong>energy, power generation, nuclear, water/wastewater, defense,
-  building automation, and heavy industrial</strong> sectors.
-  Experience at <strong>AECOM, GE Vernova, JNE Group,</strong> and
-  <strong>Salford Group (Linamar)</strong> — from full electrical design
-  and P&amp;ID analysis through FAT/SAT, commissioning, and operator handover.
-  Delivered production-grade systems for major clients across multiple
-  critical industries. Academic excellence —
-  <strong>10.7 GPA, Dean's Honour List</strong>.
-  <strong>Held multible academic roles at Mcmaster University</strong>
-</p>
+    <p class="hero-desc reveal">
+      Early-career engineer supporting <strong>I&amp;C design and multidisciplinary project delivery</strong>
+      across water/wastewater, infrastructure, manufacturing, building automation, and power generation.
+      My work connects <strong>P&amp;ID review, PLC/SCADA/HMI design, technical documentation,
+      FAT/SAT, commissioning, schedule coordination, and field execution</strong> from design development
+      through closeout.
+    </p>
     <p class="clearance-line reveal">
-      🔐 Bruce Power Security Clearance &nbsp;·&nbsp; Government of Canada Reliability Clearance
+      🔐 Bruce Power Nuclear Clearance &nbsp;·&nbsp; Government of Canada Reliability Clearance
     </p>
     <div class="hero-cta reveal">
       <a href="#projects" class="btn btn-primary">View My Work <i class="ph ph-arrow-right"></i></a>
-      <a href="resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">
-        <i class="ph ph-download-simple"></i> Download Resume
-      </a>
+      <button type="button" class="btn btn-ghost resume-trigger" data-resume-open>
+        <i class="ph ph-file-text"></i> Choose the Right Resume
+      </button>
     </div>
     <div class="hero-stats reveal">
       <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Experience</span></div>
       <div class="stat-div"></div>
-      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Industries</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Industry Environments</span></div>
       <div class="stat-div"></div>
       <div class="stat"><span class="stat-num">4</span><span class="stat-label">PLC Platforms</span></div>
     </div>
@@ -272,7 +269,7 @@
   <div class="hero-visual reveal">
     <div class="portrait-wrap" style="position:relative">
       <div class="portrait-frame">
-        <img src="profile.jpg" alt="Ahmed Mubarak" />
+        <img src="profile-2026.jpg" alt="Ahmed Mubarak in professional business attire" />
       </div>
       <div class="float-pill p1"><i class="ph ph-lightning"></i> Energy & Power</div>
       <div class="float-pill p2"><i class="ph ph-atom"></i> Nuclear</div>
@@ -290,35 +287,36 @@
     <h2 class="section-title reveal">Built for the field.<br /><em>Driven by purpose.</em></h2>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm <strong>Ahmed Mubarak</strong> — an I&amp;C Automation and Control Systems Design Engineer currently at <strong>AECOM</strong>, one of the world's leading engineering firms, where I contribute to the design and delivery of electrical and automation systems for large-scale projects across <strong>energy, power generation, nuclear, defense, water/wastewater, and critical infrastructure</strong>.</p>
-<p>My experience spans some of Canada's most demanding engineering environments — critical outage operations across <strong>five Ontario power stations with GE Vernova</strong>, including gas &amp; steam turbine maintenance, generator overhauls, and HMI/SCADA upgrades. At <strong>JNE Group</strong>, I programmed PLC systems and designed control panels and electrical schematics for major steel producers including <strong>US Steel, Dofasco, STELCO, and Algoma</strong>. At <strong>Midwest Services Canada</strong>, I engineered a full building automation system for a <strong>Marriott hotel</strong> from design through commissioning. At <strong>Salford Group (Linamar)</strong>, I designed control harnesses and vehicle control systems for agricultural machinery. Beyond industry, I served as an <strong>Automation Lab Research Assistant</strong> and <strong>Teaching Assistant</strong> at McMaster University for Advanced Allen-Bradley PLCs, control systems, and core engineering fundamentals.</p>
-<p>I hold an active <strong>Bruce Power Security Clearance</strong> and <strong>Government of Canada Reliability &amp; Nuclear Clearance</strong> — trusted to work on Canada's most sensitive nuclear and federal infrastructure. My work is driven by <strong>precision, accountability, and the ability to deliver under pressure</strong> — bringing a high level of reliability and performance to every system I design and deploy.</p>
+        <p>I'm <strong>Ahmed Mubarak</strong>, an Instrumentation and Controls Engineer at <strong>AECOM</strong>. I support engineering scopes from design development through FAT, SAT, commissioning, and closeout, coordinating technical requirements, documents, schedules, open actions, vendors, contractors, clients, and multidisciplinary design inputs.</p>
+        <p>My controls background includes <strong>PLC programming, HMI/SCADA development, control-panel design, instrumentation, I/O documentation, electrical schematics, field verification, and troubleshooting</strong>. Earlier roles with GE Vernova, JNE Group, Midwest Services Canada, and Salford Group added experience in power-generation outages, steel manufacturing, building automation, and mobile-equipment electrical design.</p>
+        <p>I bring both a <strong>technical controls perspective</strong> and a <strong>project-delivery mindset</strong>: clear documentation, disciplined follow-through, practical field awareness, and alignment across safety, quality, scope, schedule, and stakeholder expectations.</p>
 
         <div class="industry-grid">
           <div class="ind-item"><i class="ph ph-lightning"></i><span>Energy &amp; Power</span></div>
-          <div class="ind-item"><i class="ph ph-atom"></i><span>Nuclear</span></div>
-          <div class="ind-item"><i class="ph ph-shield"></i><span>Defense</span></div>
+          <div class="ind-item"><i class="ph ph-kanban"></i><span>Project Delivery</span></div>
+          <div class="ind-item"><i class="ph ph-shield-check"></i><span>Nuclear-Cleared Work</span></div>
           <div class="ind-item"><i class="ph ph-drop"></i><span>Water / Wastewater</span></div>
           <div class="ind-item"><i class="ph ph-factory"></i><span>Steel Manufacturing</span></div>
           <div class="ind-item"><i class="ph ph-buildings"></i><span>Building Automation</span></div>
-          <div class="ind-item"><i class="ph ph-tractor"></i><span>Agricultural Machinery</span></div>
+          <div class="ind-item"><i class="ph ph-student"></i><span>Research &amp; Teaching</span></div>
           <div class="ind-item"><i class="ph ph-lock-key"></i><span>Critical Infrastructure</span></div>
         </div>
 
         <div class="about-highlights">
-          <div class="hl-item clr"><i class="ph ph-shield-check"></i><div><strong>Bruce Power Security Clearance</strong><span>Nuclear facility access — Ontario</span></div></div>
+          <div class="hl-item clr"><i class="ph ph-shield-check"></i><div><strong>Bruce Power Nuclear Clearance</strong><span>Nuclear facility access — Ontario</span></div></div>
           <div class="hl-item clr"><i class="ph ph-shield-check"></i><div><strong>Government of Canada Reliability Clearance</strong><span>Federal government security screening</span></div></div>
           <div class="hl-item"><i class="ph ph-graduation-cap"></i><div><strong>B.Tech – Automation Engineering Technology</strong><span>McMaster University · 2021 – 2025</span></div></div>
           <div class="hl-item"><i class="ph ph-graduation-cap"></i><div><strong>Advanced Diploma – Chemical Engineering Process Design</strong><span>Mohawk College · 2021 – 2023</span></div></div>
+          <div class="hl-item"><i class="ph ph-certificate"></i><div><strong>Project Management Accredited Certificate</strong><span>McMaster University · 2021 – 2025</span></div></div>
           <div class="hl-item"><i class="ph ph-map-pin"></i><div><strong>Based in Mississauga, Ontario</strong><span>Open to on-site, hybrid &amp; travel roles</span></div></div>
         </div>
       </div>
 
       <div class="about-values reveal">
-        <div class="value-card"><div class="val-icon"><i class="ph ph-cpu"></i></div><h3>Multi-Platform PLC/SCADA</h3><p>Allen-Bradley, Siemens, Omron, and Schneider PLCs — paired with FactoryTalk, WinCC, GE Cimplicity, AVEVA, and Ignition. I adapt to any stack the project demands.</p></div>
-        <div class="value-card"><div class="val-icon"><i class="ph ph-file-doc"></i></div><h3>Full Engineering Lifecycle</h3><p>P&amp;ID interpretation, I/O lists, schematic design, panel layouts, FAT/SAT testing, site commissioning, and operator training — I own every phase.</p></div>
-        <div class="value-card"><div class="val-icon"><i class="ph ph-shield-check"></i></div><h3>Cleared for Sensitive Work</h3><p>Bruce Power Security Clearance and Government of Canada Reliability Clearance — trusted for nuclear, defense, and critical federal infrastructure environments.</p></div>
-        <div class="value-card"><div class="val-icon"><i class="ph ph-wrench"></i></div><h3>Field-Proven &amp; Safety-First</h3><p>Turbine outages, live plant environments, CSA-compliant builds — I deliver under pressure with zero compromise on safety standards.</p></div>
+        <div class="value-card"><div class="val-icon"><i class="ph ph-cpu"></i></div><h3>Controls &amp; SCADA Engineering</h3><p>Allen-Bradley, Siemens, Omron, and Schneider PLC experience with FactoryTalk View, Ignition, GE iFIX/Cimplicity, WinCC, and AVEVA.</p></div>
+        <div class="value-card"><div class="val-icon"><i class="ph ph-kanban"></i></div><h3>Project Delivery &amp; Coordination</h3><p>Planning, milestone and progress tracking, action management, technical-document control, multidisciplinary coordination, and closeout support.</p></div>
+        <div class="value-card"><div class="val-icon"><i class="ph ph-check-square-offset"></i></div><h3>FAT, SAT &amp; Commissioning</h3><p>Test planning, panel and software FAT, field I/O verification, functional testing, deficiency tracking, QA/QC, commissioning, and retesting.</p></div>
+        <div class="value-card"><div class="val-icon"><i class="ph ph-shield-check"></i></div><h3>Cleared for Sensitive Work</h3><p>Bruce Power Nuclear Clearance and Government of Canada Reliability Clearance, supported by disciplined documentation and safety awareness.</p></div>
       </div>
     </div>
   </div>
@@ -352,7 +350,7 @@
 
         <div class="job-info">
           <div class="job-title">
-            Electrical Instrumentation &amp; Controls Design Engineer (I&amp;C)
+            Instrumentation &amp; Controls Engineer · EIT
           </div>
 
           <div class="job-co">
@@ -371,18 +369,20 @@
     </div>
 
     <ul class="bullets">
-      <li>Design I&amp;C and electrical systems for large-scale projects across <strong>energy, nuclear, defense, water/wastewater, and critical infrastructure</strong> — reviewing P&amp;IDs and translating process requirements into <strong>control schematics, panel layouts, I/O lists, and loop diagrams</strong> to construction-ready standards.</li>
-      <li>Designed <strong>SCADA/HMI systems using GE iFIX</strong> for the <strong>Lisgar Water Treatment Plant</strong> — developing operator screens and supporting system architecture for process monitoring and control.</li>
-      <li>Contribute to <strong>PLC programming and control system development</strong> for municipal water treatment, wastewater, defense, and critical infrastructure facilities.</li>
-      <li>Support <strong>FAT/SAT testing, commissioning, and system startup</strong> — collaborating with multidisciplinary engineering teams to verify control system functionality and ensure safe, reliable, and standards-compliant project delivery.</li>
-      <li>Produce complete <strong>electrical drawing packages for construction</strong> — schematics, panel layouts, BOM preparation, vendor package review, and coordination with multidisciplinary engineering teams.</li>
+      <li>Lead and support <strong>controls and I&amp;C design scopes</strong> for water/wastewater and infrastructure facilities, developing PLC/control-panel design, instrumentation selections, I/O lists, SCADA/network architecture, alarm points, equipment tags, and detailed-design submissions.</li>
+      <li>Review <strong>P&amp;IDs, process requirements, control narratives, specifications, and existing plant documentation</strong> to translate operational needs into coordinated PLC, HMI/SCADA, electrical, instrumentation, and control-system requirements.</li>
+      <li>Lead and support <strong>SCADA/HMI development and upgrade work</strong> using Ignition, GE iFIX, and FactoryTalk View, including operator screens, tags, alarms, trends, and equipment-monitoring tools.</li>
+      <li>Support Project Managers and discipline leads with <strong>planning, schedule updates, milestone and progress tracking, scope reviews, risk identification, priority management, and action follow-through</strong>.</li>
+      <li>For the <strong>Lisgar District – Doug Leavens Pumping Station</strong>, supported I&amp;C document review, panel and software FAT, SCADA I/O verification, SAT activities, deficiency tracking, multidisciplinary coordination, and commissioning documentation.</li>
+      <li>Lead and support <strong>FAT, SAT, commissioning, field verification, vendor-package review, QA/QC, deficiency tracking, and technical issue resolution</strong> to validate control-system performance and constructability.</li>
+      <li>Developed a <strong>Python-based proposal automation tool</strong> that centralized project history, team résumés, workload data, and reusable technical content, reducing a multi-week workflow to approximately three days.</li>
     </ul>
 
     <div class="tags">
-      <span>Energy</span><span>Nuclear</span><span>Defense</span><span>Water/Wastewater</span>
-      <span>Critical Infrastructure</span><span>SCADA/HMI</span><span>FAT/SAT</span>
-      <span>GE Control Systems</span><span>P&amp;ID Analysis</span>
-      <span>Panel Layouts</span><span>Electrical Design</span>
+      <span>Project Coordination</span><span>Water/Wastewater</span><span>PLC/SCADA/HMI</span>
+      <span>FAT/SAT</span><span>Commissioning</span><span>QA/QC</span>
+      <span>P&amp;ID Review</span><span>Technical Documentation</span>
+      <span>AutoCAD / EPLAN / Revit</span><span>Python Automation</span>
     </div>
 
   </div>
@@ -402,11 +402,12 @@
             <div class="job-meta"><span><i class="ph ph-calendar"></i> May – Sept 2025</span><span class="job-type">Co-op</span></div>
           </div>
           <ul class="bullets">
-            <li>Designed, programmed, and commissioned Allen-Bradley (Studio 5000) and Siemens (TIA Portal) PLC/HMI systems for <strong>Dofasco, STELCO, Algoma Steel, and US Steel</strong>.</li>
-            <li>Engineered complete control system for <strong>US Steel's HDGL wastewater plant</strong> — 368+ point I/O list, AutoCAD schematics, and panel layouts from P&amp;ID analysis.</li>
-            <li>Designed high-voltage motor control and power distribution panels to CSA/ISA standards. Upgraded legacy relay logic to modern PLC-based control.</li>
+            <li>Delivered control-system design support for <strong>US Steel's HDGL wastewater treatment plant</strong>, including control schematics, PLC-panel layouts, a 368+ point I/O list, FAT/SAT support, and on-site commissioning.</li>
+            <li>Programmed, tested, and supported <strong>Siemens and Allen-Bradley PLCs, FactoryTalk View HMI, and SCADA/HMI applications</strong> for industrial equipment status, alarms, operator control, process monitoring, and troubleshooting.</li>
+            <li>Developed and reviewed low-voltage industrial control deliverables, including <strong>single-line diagrams, load lists, termination details, instrument connections, installation details, and I/O documentation</strong>.</li>
+            <li>Supported vendor-package reviews, equipment selection, BOM development, network-architecture review, and control-panel documentation with exposure to <strong>CSA, CEC, UL/UL 508A, and Class I Div 2</strong> design considerations.</li>
           </ul>
-          <div class="tags"><span>Studio 5000</span><span>TIA Portal</span><span>AutoCAD Electrical</span><span>FAT/SAT</span><span>Steel Manufacturing</span></div>
+          <div class="tags"><span>Studio 5000</span><span>TIA Portal</span><span>FactoryTalk View</span><span>AutoCAD Electrical</span><span>FAT/SAT</span><span>368+ I/O</span></div>
         </div>
       </div>
 
@@ -425,10 +426,10 @@
             <div class="job-meta"><span><i class="ph ph-calendar"></i> Nov 2024 – May 2025</span><span class="job-type">Part-Time</span></div>
           </div>
          <ul class="bullets">
-  <li>Led the design and implementation of automation solutions for commercial building applications — integrating system architecture, <strong>control panel layouts, and Siemens PLC/HMI programming</strong> for real-world deployed systems.</li>
-  <li>Provided full engineering from design to implementation for the <strong>Delta Marriott Hotel's networked compressor control system</strong> — including <strong>electrical design, panel building, and on-site commissioning</strong> — delivering real-time alarms, automated daily engineer reports, and preventive maintenance scheduling.</li>
-  <li>Built and certified <strong>CSA-compliant custom control panels</strong> to Ontario Electrical Code — achieving full <strong>ESA/ESAFE certification</strong> before client handover.</li>
-  <li>Trained hotel engineering staff on system operation, fault response, and maintenance procedures — delivering a complete documentation package including wiring drawings and maintenance manuals.</li>
+  <li>Designed and implemented <strong>Siemens PLC-based automation and low-voltage control systems</strong> for commercial and industrial building applications, including HVAC, compressor controls, alarms, monitoring, and operator interfaces.</li>
+  <li>Delivered the <strong>Delta Marriott Hotel networked dual-compressor system</strong>, including electrical design, PLC programming, control-panel design, device selection, commissioning, and operator training.</li>
+  <li>Developed electrical schematics, control circuits, panel layouts, wiring and termination details, load requirements, BOMs, and installation documentation for fabrication and certification.</li>
+  <li>Selected and integrated panel components with consideration for <strong>CSA, CEC, and ESA/eSAFE</strong> requirements.</li>
 </ul>
 <div class="tags">
   <span>Siemens PLC/HMI</span>
@@ -443,98 +444,40 @@
 </div>
 </div>
 
-<!-- GE Vernova -->
-<div class="tl-item reveal">
-  <div class="tl-dot"></div>
-
-  <div class="tl-card">
-    <div class="job-head">
-      <div class="job-left">
-        <div class="co-logo-wrap">
-          <img
-            src="gevernova.png"
-            alt="GE Vernova"
-            class="co-logo"
-            onerror="this.parentElement.innerHTML='<span class=&quot;co-text&quot;>GE</span>'"
-          />
-        </div>
-
-        <div>
-          <div class="job-title">Project Coordinator / Field Engineer</div>
-
-          <div class="job-co">
-            <i class="ph ph-buildings"></i>
-            <a
-              href="https://www.gevernova.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GE Vernova (General Electric)
-            </a>
+      <!-- GE Vernova -->
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="job-head">
+            <div class="job-left">
+              <div class="co-logo-wrap"><img src="gevernova.png" alt="GE" class="co-logo" onerror="this.parentElement.innerHTML='<span class=co-text>GE</span>'" /></div>
+              <div>
+                <div class="job-title">Project Coordinator / Electrical Controls Field Engineer</div>
+                <div class="job-co"><i class="ph ph-buildings"></i> <a href="https://www.gevernova.com/" target="_blank" rel="noopener noreferrer">GE Vernova (General Electric)</a></div>
+              </div>
+            </div>
+            <div class="job-meta"><span><i class="ph ph-calendar"></i> Jan – Dec 2024</span><span class="job-type">Co-op</span></div>
           </div>
-        </div>
-      </div>
-
-      <div class="job-meta">
-        <span>
-          <i class="ph ph-calendar"></i>
-          Jan 2024 – Dec 2024
-        </span>
-
-        <span class="job-type">Co-op</span>
-      </div>
-    </div>
-
-    <ul class="bullets">
-      <li>
-        Supported <strong>Project Managers and field engineering teams</strong>
-        with planning and execution of Ontario power-station outage projects
-        involving gas turbines, steam turbines, generators, excitation systems,
-        and electrical/control maintenance.
-      </li>
-
-      <li>
-        Coordinated <strong>project schedules, daily execution priorities, field
-        progress updates, action items, technical documentation, and activity
-        tracking</strong> to support safe and on-schedule outage execution.
-      </li>
-
-      <li>
-        Supported <strong>inspections, maintenance, repairs, testing,
-        commissioning, issue tracking, documentation review, and
-        closeout</strong>, coordinating engineering requirements with field
-        execution.
-      </li>
-
-      <li>
-        Worked closely with <strong>Project Managers, field engineers, client
-        representatives, vendors, contractors, and site teams</strong> to align
-        scope, schedule, safety, technical requirements, site priorities, and
-        customer expectations.
-      </li>
-
-      <li>
-        Reviewed <strong>engineering drawings, commissioning records, vendor
-        documentation, and field reports</strong> to support troubleshooting,
-        risk identification, progress reporting, and resolution of field
-        challenges.
-      </li>
-    </ul>
-
-    <div class="tags">
-      <span>Project Coordination</span>
-      <span>Field Engineering</span>
-      <span>Outage Planning</span>
-      <span>Gas Turbines</span>
-      <span>Steam Turbines</span>
-      <span>Generators</span>
-      <span>Excitation Systems</span>
-      <span>Commissioning</span>
-      <span>Technical Documentation</span>
-      <span>Project Scheduling</span>
-    </div>
-  </div>
+         <ul class="bullets">
+  <li>Supported <strong>Project Managers and field engineering teams</strong> with planning and execution of Ontario power-station outage projects involving gas turbines, steam turbines, generators, excitation systems, and electrical/control maintenance.</li>
+  <li>Coordinated <strong>project schedules, daily priorities, progress updates, action items, technical documentation, and activity tracking</strong> to support safe and on-schedule outage execution.</li>
+  <li>Supported commissioning, maintenance, troubleshooting, loop checks, signal verification, alarm review, instrumentation troubleshooting, and <strong>DCS/electrical-control-system validation</strong> across five power stations.</li>
+  <li>Worked with Project Managers, field engineers, client representatives, vendors, contractors, and site teams to align scope, schedule, safety, technical requirements, priorities, and customer expectations.</li>
+  <li>Reviewed <strong>engineering drawings, control schematics, wiring and termination information, vendor documentation, commissioning records, and field reports</strong> to support testing, troubleshooting, risk identification, and closeout.</li>
+</ul>
+<div class="tags">
+  <span>Project Coordination</span>
+  <span>DCS Systems</span>
+  <span>Gas Turbines</span>
+  <span>Steam Turbines</span>
+  <span>Excitation Systems</span>
+  <span>Field Commissioning</span>
+  <span>Loop Checks</span>
+  <span>Outage Planning</span>
+  <span>Progress Tracking</span>
+  <span>Technical Documentation</span>
 </div>
+      </div>
 
       <!-- Salford -->
       <div class="tl-item reveal">
@@ -551,10 +494,9 @@
             <div class="job-meta"><span><i class="ph ph-calendar"></i> May – Sept 2023</span><span class="job-type">Co-op</span></div>
           </div>
           <ul class="bullets">
-            <li>Designed <strong>electrical harnesses<strong>, <strong>routing diagrams<strong>, and <strong>control panel schematics in AutoCAD Electrical <strong>for agricultural vehicles.</li>
-            <li>Programmed and optimized <strong>Fanuc robotic systems</strong> for welding and assembly — reducing cycle time and increasing efficiency.</li>
+            <li>Designed <strong>electrical harnesses, routing diagrams, and control-panel schematics and layouts</strong> in AutoCAD Electrical for agricultural vehicles, improving manufacturability and design accuracy.</li>
           </ul>
-          <div class="tags"><span>AutoCAD Electrical</span><span>Fanuc Robotics</span><span>Harness Design</span><span>Agricultural Machinery</span></div>
+          <div class="tags"><span>AutoCAD Electrical</span><span>Harness Design</span><span>Control Schematics</span><span>Agricultural Machinery</span></div>
         </div>
       </div>
 
@@ -597,6 +539,19 @@
 
     <div class="projects-grid">
 
+      <a href="project-lisgar.html" class="proj-card reveal">
+        <div class="pc-top pc-bg3">
+          <i class="ph ph-drop-half-bottom pc-icon-big"></i>
+          <span class="pc-cat">Municipal Infrastructure · FAT/SAT</span>
+        </div>
+        <div class="pc-body">
+          <h3>Lisgar District – Doug Leavens Pumping Station</h3>
+          <p>I&amp;C and SCADA verification across document review, panel FAT, software FAT, field I/O checks, SAT, deficiency tracking, and commissioning coordination.</p>
+          <div class="pc-stack"><span>PLC/SCADA</span><span>Panel FAT</span><span>Software FAT</span><span>Site SAT</span><span>QA/QC</span></div>
+          <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
+        </div>
+      </a>
+
       <a href="project-delta-hotel.html" class="proj-card reveal">
         <div class="pc-top pc-bg1">
           <i class="ph ph-buildings-bold pc-icon-big"></i>
@@ -617,8 +572,8 @@
         </div>
         <div class="pc-body">
           <h3>GE Vernova – 2024 Spring Outage (5 Power Stations)</h3>
-          <p>Field engineering across five Ontario power stations — turbine outage support, DCS diagnostics, and HMI upgrades using GE Cimplicity. ~90% travel.</p>
-          <div class="pc-stack"><span>DCS</span><span>GE Cimplicity</span><span>Gas Turbines</span><span>Steam Turbines</span></div>
+          <p>Project coordination and field-engineering support across five Ontario power stations, including outage planning, DCS/electrical controls, testing, commissioning, and technical documentation.</p>
+          <div class="pc-stack"><span>Project Coordination</span><span>DCS</span><span>Gas Turbines</span><span>Commissioning</span></div>
           <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
         </div>
       </a>
@@ -692,7 +647,7 @@
         </div>
         <div class="pc-body">
           <h3>US Steel HDGL – Wastewater Treatment Control System</h3>
-          <p>Complete control system engineering — 368+ point I/O list, AutoCAD schematics, and panel layouts from P&amp;ID analysis for US Steel's HDGL wastewater plant.</p>
+          <p>Control-system design support — 368+ point I/O list, AutoCAD schematics, and panel layouts developed from P&amp;ID analysis for US Steel's HDGL wastewater plant.</p>
           <div class="pc-stack"><span>Allen-Bradley</span><span>Studio 5000</span><span>AutoCAD Electrical</span><span>368+ I/O</span></div>
           <div class="pc-link"><i class="ph ph-arrow-right"></i> View Full Project</div>
         </div>
@@ -708,29 +663,28 @@
 <section id="skills" class="section-dark">
   <div class="container">
     <div class="section-label reveal">Technical Skills</div>
-    <h2 class="section-title reveal">The Full <em>Arsenal</em></h2>
+    <h2 class="section-title reveal">Technical Depth. <em>Delivery Discipline.</em></h2>
     <div class="skills-grid">
-      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-cpu"></i><h3>PLC Platforms</h3></div><div class="pills"><span>Allen-Bradley (Studio 5000 / RSLogix)</span><span>Siemens (TIA Portal / S7-1200/1500 / LOGO!)</span><span>Omron (Sysmac / CX-Programmer)</span><span>Schneider (M172 / Modicon)</span><span>Ladder Logic</span><span>Structured Text</span><span>FBD</span></div></div>
-      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-monitor-play"></i><h3>SCADA &amp; HMI</h3></div><div class="pills"><span>FactoryTalk View SE/ME</span><span>Siemens WinCC</span><span>GE Proficy / Cimplicity / iFIX</span><span>AVEVA</span><span>Ignition</span><span>PanelView</span><span>LabVIEW</span><span>Ubidots / MQTT</span></div></div>
-      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-lightning"></i><h3>Electrical &amp; I&amp;C Design</h3></div><div class="pills"><span>AutoCAD Electrical</span><span>EPLAN</span><span>Revit</span><span>SolidWorks</span><span>P&amp;ID Interpretation</span><span>Panel Layouts</span><span>I/O Lists &amp; Loop Diagrams</span><span>MCC &amp; Power Distribution</span><span>VFD Config</span><span>BOM Preparation</span></div></div>
-      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-gauge"></i><h3>Field &amp; Instrumentation</h3></div><div class="pills"><span>FAT / SAT / Commissioning</span><span>DCS Integration</span><span>Turbine &amp; Generator Testing</span><span>Root Cause Analysis</span><span>Flow / Pressure / Temp Sensors</span><span>pH / Turbidity / Vibration</span><span>Instrumentation Sizing</span><span>LOTO</span><span>HART Protocol</span></div></div>
-      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-git-network"></i><h3>Industrial Networks</h3></div><div class="pills"><span>EtherNet/IP</span><span>PROFINET</span><span>Modbus TCP/IP</span><span>PROFIBUS</span><span>DeviceNet</span><span>BACnet</span><span>HART</span></div></div>
-      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-code"></i><h3>Software &amp; Programming</h3></div><div class="pills"><span>Python</span><span>MATLAB / Simulink</span><span>C / C++</span><span>Verilog</span><span>VBA</span><span>Fanuc TP Programming</span><span>Roboguide</span><span>Fusion 360</span><span>Multisim</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-kanban"></i><h3>Project Coordination &amp; Controls</h3></div><div class="pills"><span>Project Planning</span><span>Schedule Coordination</span><span>Milestone &amp; Progress Tracking</span><span>Action Logs</span><span>Scope / Risk / Change Tracking</span><span>Deliverable Tracking</span><span>Closeout Support</span><span>Vendor &amp; Client Coordination</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-cpu"></i><h3>PLC, HMI &amp; SCADA</h3></div><div class="pills"><span>Allen-Bradley / Rockwell</span><span>Studio 5000</span><span>Siemens TIA Portal / LOGO!</span><span>Omron Sysmac</span><span>Schneider M172</span><span>FactoryTalk View</span><span>Ignition</span><span>GE iFIX / Proficy / Cimplicity</span><span>Siemens WinCC</span><span>AVEVA</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-lightning"></i><h3>Electrical &amp; I&amp;C Design</h3></div><div class="pills"><span>AutoCAD / AutoCAD Electrical</span><span>EPLAN</span><span>Revit</span><span>P&amp;ID Review</span><span>Control Schematics</span><span>Panel Layouts</span><span>I/O Lists</span><span>Loop Diagrams</span><span>Single-Line Diagrams</span><span>Field Wiring &amp; Terminations</span><span>BOM Development</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-check-square-offset"></i><h3>FAT, SAT &amp; Commissioning</h3></div><div class="pills"><span>Panel FAT</span><span>Software FAT</span><span>Site SAT</span><span>I/O Verification</span><span>Loop Checks</span><span>Signal Verification</span><span>Alarm Review</span><span>Field Verification</span><span>Deficiency Tracking</span><span>QA/QC</span><span>Commissioning Records</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-git-network"></i><h3>Networks &amp; Instrumentation</h3></div><div class="pills"><span>EtherNet/IP</span><span>PROFINET</span><span>Modbus TCP/IP</span><span>BACnet</span><span>HART</span><span>VFDs &amp; Motor Control</span><span>Sensors &amp; Actuators</span><span>Instrumentation Selection</span><span>DCS Support</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head"><i class="ph ph-toolbox"></i><h3>Delivery Tools &amp; Programming</h3></div><div class="pills"><span>Microsoft Project</span><span>Excel</span><span>SharePoint</span><span>Teams</span><span>Autodesk Construction Cloud / BIM 360</span><span>Primavera P6 Exposure</span><span>Power BI Exposure</span><span>Python</span><span>Technical Documentation</span><span>CSA / CEC / ISA</span></div></div>
     </div>
   </div>
 </section>
 
 <!-- RESUME BANNER -->
-<section class="resume-section">
+<section class="resume-section" id="resume">
   <div class="container">
     <div class="resume-banner reveal">
       <div class="rb-text">
-        <h2>Want the full picture?</h2>
-        <p>Download my resume for a complete view of my experience, clearances, and technical qualifications.</p>
+        <h2>Choose the résumé that fits the role</h2>
+        <p>Select the project-engineering version for coordination and delivery roles, or the controls version for PLC, SCADA/HMI, automation, and commissioning roles.</p>
       </div>
       <div class="rb-btns">
-        <a href="resume.pdf" class="btn btn-primary" target="_blank" rel="noopener"><i class="ph ph-download-simple"></i> Download Resume</a>
-        <a href="resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener"><i class="ph ph-eye"></i> View PDF</a>
+        <button type="button" class="btn btn-primary resume-trigger" data-resume-open><i class="ph ph-files"></i> Choose Resume</button>
       </div>
     </div>
   </div>
@@ -756,8 +710,8 @@
         </div>
         <div class="fg"><label for="fsubject">Subject</label><input type="text" id="fsubject" name="subject" placeholder="Job Opportunity / Project Inquiry" /></div>
         <div class="fg"><label for="fmsg">Message</label><textarea id="fmsg" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea></div>
-        <button type="submit" class="btn btn-primary btn-full"><i class="ph ph-paper-plane-tilt"></i> Send Message</button>
-        <p class="form-note">Or email directly at <a href="mailto:ahmed.mubarak.eng@gmail.com">ahmed.mubarak.eng@gmail.com</a></p>
+        <button type="submit" class="btn btn-primary btn-full"><i class="ph ph-envelope-open"></i> Open Email Draft</button>
+        <p class="form-note">This form opens your email application; it does not store or transmit information through this website.</p>
       </form>
     </div>
   </div>
@@ -767,18 +721,63 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-brand"><span class="f-logo">AM<span class="dot">.</span></span><p>I&amp;C Automation &amp; Control Systems Engineer <br />Currently at AECOM</p></div>
+      <div class="footer-brand"><span class="f-logo">AM<span class="dot">.</span></span><p>Instrumentation &amp; Controls Engineer<br />Project Engineering &amp; Coordination</p></div>
       <nav class="footer-nav"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
       <div class="footer-social">
         <a href="https://www.linkedin.com/in/ahmed-mubarak-eng/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
         <a href="mailto:ahmed.mubarak.eng@gmail.com" aria-label="Email"><i class="ph ph-envelope"></i></a>
         <a href="tel:6473953551" aria-label="Phone"><i class="ph ph-phone"></i></a>
-        <a href="resume.pdf" aria-label="Resume" target="_blank"><i class="ph ph-file-text"></i></a>
+        <button type="button" aria-label="Choose resume" class="resume-footer-trigger" data-resume-open><i class="ph ph-file-text"></i></button>
       </div>
     </div>
     <div class="footer-bottom"><span>© <span id="year"></span> Ahmed Mubarak. All rights reserved.</span><span>Engineered with intention.</span></div>
   </div>
 </footer>
+
+<dialog class="resume-dialog" id="resumeDialog" aria-labelledby="resumeDialogTitle">
+  <div class="resume-dialog-shell">
+    <div class="resume-dialog-head">
+      <div>
+        <span class="resume-kicker">Role-aligned documents</span>
+        <h2 id="resumeDialogTitle">Which résumé would you like?</h2>
+        <p>Choose the version that best matches the position you are reviewing.</p>
+      </div>
+      <button type="button" class="resume-close" data-resume-close aria-label="Close résumé chooser"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="resume-options">
+      <article class="resume-option">
+        <div class="resume-option-icon"><i class="ph ph-kanban"></i></div>
+        <span class="resume-option-label">Project delivery track</span>
+        <h3>Project Engineering &amp; Coordination</h3>
+        <p>Best for project engineer, project coordinator, field coordinator, and multidisciplinary delivery roles.</p>
+        <ul>
+          <li>Planning, schedules, milestones, and progress tracking</li>
+          <li>Technical documentation, QA/QC, risk, and closeout</li>
+          <li>Vendor, contractor, client, and field coordination</li>
+        </ul>
+        <div class="resume-option-actions">
+          <a class="btn btn-primary" href="resume-project-engineering.pdf" target="_blank" rel="noopener"><i class="ph ph-eye"></i> View</a>
+          <a class="btn btn-ghost" href="resume-project-engineering.pdf" download><i class="ph ph-download-simple"></i> Download</a>
+        </div>
+      </article>
+      <article class="resume-option">
+        <div class="resume-option-icon"><i class="ph ph-cpu"></i></div>
+        <span class="resume-option-label">Technical controls track</span>
+        <h3>I&amp;C Automation &amp; Controls</h3>
+        <p>Best for controls, automation, manufacturing, SCADA/HMI, commissioning, and I&amp;C design roles.</p>
+        <ul>
+          <li>PLC programming, HMI/SCADA, and control panels</li>
+          <li>P&amp;IDs, I/O, schematics, instrumentation, and networks</li>
+          <li>FAT/SAT, commissioning, troubleshooting, and field testing</li>
+        </ul>
+        <div class="resume-option-actions">
+          <a class="btn btn-primary" href="resume-controls-automation.pdf" target="_blank" rel="noopener"><i class="ph ph-eye"></i> View</a>
+          <a class="btn btn-ghost" href="resume-controls-automation.pdf" download><i class="ph ph-download-simple"></i> Download</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>

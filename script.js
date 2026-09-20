@@ -12,14 +12,17 @@
   var btn = document.getElementById('hamburger');
   var menu = document.getElementById('mobileMenu');
   if(!btn||!menu) return;
+  btn.setAttribute('aria-expanded','false');
   btn.addEventListener('click', function(){
     var open = menu.classList.toggle('open');
     btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
   });
   menu.querySelectorAll('.mobile-link').forEach(function(l){
     l.addEventListener('click', function(){
       menu.classList.remove('open');
       btn.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
     });
   });
 })();
@@ -97,24 +100,57 @@ if(yr) yr.textContent = new Date().getFullYear();
   if(!form) return;
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var btn = form.querySelector('button[type="submit"]');
     var name = form.querySelector('#fname').value.trim();
     var mail = form.querySelector('#femail').value.trim();
+    var subject = form.querySelector('#fsubject').value.trim();
     var msg  = form.querySelector('#fmsg').value.trim();
     if(!name||!mail||!msg){ showMsg('error','Please fill in all required fields.'); return; }
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){ showMsg('error','Please enter a valid email.'); return; }
-    btn.disabled=true; btn.textContent='Sending…';
-    setTimeout(function(){
-      btn.disabled=false; btn.innerHTML='<i class="ph ph-paper-plane-tilt"></i> Send Message';
-      showMsg('success',"✓ Message sent! I'll get back to you soon.");
-      form.reset();
-    },1200);
+    var body = 'Name: '+name+'\nEmail: '+mail+'\n\n'+msg;
+    var href = 'mailto:ahmed.mubarak.eng@gmail.com?subject='+encodeURIComponent(subject||'Portfolio inquiry from '+name)+'&body='+encodeURIComponent(body);
+    showMsg('success','Opening your email application with a prepared draft. Please review it before sending.');
+    window.location.href = href;
     function showMsg(type,text){
       var old=form.querySelector('.fmsg'); if(old) old.remove();
       var el=document.createElement('div'); el.className='fmsg';
       el.style.cssText='padding:12px 16px;border-radius:7px;font-size:.85rem;margin-top:8px;'+(type==='success'?'background:rgba(90,200,115,.1);border:1px solid rgba(90,200,115,.3);color:#6ecf8a;':'background:rgba(220,75,75,.1);border:1px solid rgba(220,75,75,.3);color:#e07575;');
       el.textContent=text; form.appendChild(el);
-      setTimeout(function(){ el.remove(); },6000);
+      setTimeout(function(){ el.remove(); },7000);
     }
+  });
+})();
+
+/* ── ROLE-BASED RESUME CHOOSER ── */
+(function(){
+  var dialog = document.getElementById('resumeDialog');
+  if(!dialog) return;
+  var openers = document.querySelectorAll('[data-resume-open]');
+  var closer = dialog.querySelector('[data-resume-close]');
+  var lastTrigger = null;
+
+  function openDialog(event){
+    if(event) event.preventDefault();
+    lastTrigger = event && event.currentTarget ? event.currentTarget : document.activeElement;
+    if(typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open','');
+    document.body.classList.add('modal-open');
+    if(closer) closer.focus();
+  }
+
+  function closeDialog(){
+    if(typeof dialog.close === 'function') dialog.close();
+    else dialog.removeAttribute('open');
+  }
+
+  openers.forEach(function(opener){ opener.addEventListener('click', openDialog); });
+  if(closer) closer.addEventListener('click', closeDialog);
+
+  dialog.addEventListener('click', function(event){
+    if(event.target === dialog) closeDialog();
+  });
+
+  dialog.addEventListener('close', function(){
+    document.body.classList.remove('modal-open');
+    if(lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
   });
 })();
